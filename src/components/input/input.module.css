@@ -1,0 +1,38 @@
+@import url(../../fonts/index.css);
+@import url(../../css/variables.css);
+
+:root {
+  --input-bg-color: rgba(241, 244, 247, 1);
+  --input-font-color: #000;
+  --bg-input-font-color: rgba(195, 195, 195, 0.8);
+}
+
+.input {
+  font-family: var(--primaty-font-family);
+  position: relative;
+  background: var(--input-bg-color);
+  border-radius: 40px;
+}
+
+.input__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 15px 20px;
+}
+
+.input :is(input::placeholder, .input__placeholder) {
+  color: var(--bg-input-font-color);
+}
+
+.input__content {
+  font-family: inherit;
+  padding: 0;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid var(--bg-input-font-color);
+  flex: 1;
+  background: transparent;
+  font-size: 1rem;
+  color: var(--input-font-color);
+}

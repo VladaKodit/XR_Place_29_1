@@ -1,0 +1,1 @@
+export { useInputTel } from './useInputTel';

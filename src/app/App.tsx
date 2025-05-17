@@ -1,8 +1,9 @@
-import styles from './App.module.css';
+import { Input } from '../components/input';
 
 function App() {
   return (
     <>
+      <Input type="phone"></Input>
     </>
   );
 }
