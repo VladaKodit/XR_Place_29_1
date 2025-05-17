@@ -1,0 +1,10 @@
+{
+  "navbar": {
+    "about": "About",
+    "howItWorks": "How it works",
+    "features": "Features"
+  },
+  "hero": {
+    "description": "Convenient tools for presenting objects: create virtual tours with minimal time and resource costs"
+  }
+}
