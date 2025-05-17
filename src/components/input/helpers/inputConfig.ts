@@ -6,13 +6,15 @@ import type {
   DataFlags,
   CountryCode,
   PhoneDataType,
-} from '../type';
+} from '../../../utils/types/Input';
 
+// шаблоны для маски в phone type input
 export const PHONE_MASKS: Record<CountryCode, PhoneDataType> = {
-  ru: '+_ (___) ___-__-__',
+  ru: '+_ (___) ___ __-__',
   en: '+__ ____ ______',
 };
 
+// данные для флагов в phone type input
 export const DATA_FLAGS_SELECTOR: DataFlags = {
   ru: {
     path: ruFlag,
@@ -24,7 +26,8 @@ export const DATA_FLAGS_SELECTOR: DataFlags = {
   },
 } as const;
 
-const INPUT_CONFIGS: Record<AbstractInputType, InputData> = {
+// конфиг для inputs
+export const INPUT_CONFIGS: Record<AbstractInputType, InputData> = {
   phone: {
     typeInput: 'tel',
     prefixInput: null,
@@ -47,5 +50,6 @@ const INPUT_CONFIGS: Record<AbstractInputType, InputData> = {
   },
 } as const;
 
+// выделяет из конфига данные
 export const getInputData = (type: AbstractInputType): InputData =>
   INPUT_CONFIGS[type] || INPUT_CONFIGS.default;

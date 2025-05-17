@@ -31,6 +31,7 @@
 
 .input__content {
   font-family: inherit;
+  flex: 1;
   padding: 0;
   outline: none;
   border: none;
@@ -55,51 +56,4 @@
 .input__selector-arrow {
   font-size: 5px;
   color: var(--bg-input-font-color);
-}
-
-.dropdown {
-  position: absolute;
-  top: 100%;
-  left: 20px;
-  margin-top: 5px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  overflow: hidden;
-}
-
-.dropdown__item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.dropdown__item:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-/* Стили для отображения телефонного номера */
-.phoneInputDisplay {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  cursor: text;
-  font-size: 20px;
-  border-bottom: none;
-}
-
-.inputStatic {
-  color: rgba(195, 195, 195, 0.8);
-}
-
-.inputPlaceholder {
-  color: rgba(195, 195, 195, 0.8);
-}
-
-.inputDigit {
-  color: black;
 }
