@@ -1,9 +1,10 @@
+@import url(./css/normalizer.css);
+
 :root {
   background-color: #242424;
 }
 
 body {
-  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
