@@ -2,17 +2,19 @@ import type { HTMLInputTypeAttribute } from 'react';
 
 export type AbstractInputType = 'phone' | 'tg' | 'email' | 'name' | 'default';
 
-export type PathFlags<T> = {
-  ru: T;
-  en?: T;
+export type FlagImg = {
+  path: string;
+  alt: string;
+};
+export type DataFlags = {
+  ru: FlagImg;
+  en?: FlagImg;
 };
 
-export type InputPrefix =
-  | 'ru'
-  | 'https://t.me/'
-  | 'email'
-  | 'Как вас зовут'
-  | null;
+export type CountryCode = 'ru' | 'en';
+export type PhoneDataType = string;
+
+export type InputPrefix = 'https://t.me/' | 'email' | 'Как вас зовут' | null;
 
 export type InputData = {
   typeInput: HTMLInputTypeAttribute;

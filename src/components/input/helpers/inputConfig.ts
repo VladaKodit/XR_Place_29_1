@@ -1,14 +1,33 @@
 import ruFlag from '../../../assets/flags/ru.svg';
-import type { AbstractInputType, InputData, PathFlags } from '../type';
+import enFlag from '../../../assets/flags/en.svg';
+import type {
+  AbstractInputType,
+  InputData,
+  DataFlags,
+  CountryCode,
+  PhoneDataType,
+} from '../type';
 
-export const PATH_FLAGS_SELECTOR: PathFlags<string> = {
-  ru: ruFlag,
+export const PHONE_MASKS: Record<CountryCode, PhoneDataType> = {
+  ru: '+_ (___) ___-__-__',
+  en: '+__ ____ ______',
 };
+
+export const DATA_FLAGS_SELECTOR: DataFlags = {
+  ru: {
+    path: ruFlag,
+    alt: 'russian flag',
+  },
+  en: {
+    path: enFlag,
+    alt: 'british  flag',
+  },
+} as const;
 
 const INPUT_CONFIGS: Record<AbstractInputType, InputData> = {
   phone: {
     typeInput: 'tel',
-    prefixInput: 'ru',
+    prefixInput: null,
   },
   tg: {
     typeInput: 'url',
