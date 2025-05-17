@@ -1,9 +1,14 @@
-import type { AbstractInputType, InputData } from '../type';
+import ruFlag from '../../../assets/flags/ru.svg';
+import type { AbstractInputType, InputData, PathFlags } from '../type';
+
+export const PATH_FLAGS_SELECTOR: PathFlags<string> = {
+  ru: ruFlag,
+};
 
 const INPUT_CONFIGS: Record<AbstractInputType, InputData> = {
   phone: {
     typeInput: 'tel',
-    prefixInput: '🇷🇺',
+    prefixInput: 'ru',
   },
   tg: {
     typeInput: 'url',

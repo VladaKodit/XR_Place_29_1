@@ -3,4 +3,5 @@
     'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
   --primaty-font-family:
     'Helvetica', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-size-min: 16px;
 }

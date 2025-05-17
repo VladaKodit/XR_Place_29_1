@@ -2,19 +2,21 @@
 @import url(../../css/variables.css);
 
 :root {
+  --input-border-radius: 40px;
   --input-bg-color: rgba(241, 244, 247, 1);
   --input-font-color: #000;
   --bg-input-font-color: rgba(195, 195, 195, 0.8);
 }
 
 .input {
-  font-family: var(--primaty-font-family);
   position: relative;
+  font-family: var(--primaty-font-family);
   background: var(--input-bg-color);
-  border-radius: 40px;
+  border-radius: var(--input-border-radius);
 }
 
 .input__wrapper {
+  inline-size: max-content;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -31,8 +33,24 @@
   outline: none;
   border: none;
   border-bottom: 1px solid var(--bg-input-font-color);
-  flex: 1;
   background: transparent;
-  font-size: 1rem;
+  font-size: var(--font-size-min);
   color: var(--input-font-color);
+}
+
+.input__tel-selector {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.input__flag-country {
+  font-size: 18px;
+}
+
+.input__selector-arrow {
+  font-size: 5px;
+  color: #888;
 }

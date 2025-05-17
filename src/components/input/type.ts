@@ -2,8 +2,13 @@ import type { HTMLInputTypeAttribute } from 'react';
 
 export type AbstractInputType = 'phone' | 'tg' | 'email' | 'name' | 'default';
 
+export type PathFlags<T> = {
+  ru: T;
+  en?: T;
+};
+
 export type InputPrefix =
-  | '🇷🇺'
+  | 'ru'
   | 'https://t.me/'
   | 'email'
   | 'Как вас зовут'
