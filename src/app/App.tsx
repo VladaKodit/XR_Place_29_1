@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Input } from '../components/input';
+import { Input, CheckboxInput } from '../components/input';
 
 function App() {
   const [phoneValue, setPhoneValue] = useState('');
@@ -28,6 +28,13 @@ function App() {
         type="name"
         value={nameValue}
         onChange={(e) => setNameValue(e.target.value)}
+      />
+      <CheckboxInput
+        description="Я принимаю условия"
+        textLink={{
+          url: '#',
+          text: 'Политики обработки персональных данных',
+        }}
       />
     </div>
   );

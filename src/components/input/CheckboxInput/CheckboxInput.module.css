@@ -1,0 +1,28 @@
+@import url(../../../css/variables.css);
+
+.checkbox-input {
+  font-family: var(--primaty-font-family);
+  display: flex;
+  gap: 4px;
+}
+
+.checkbox-input__body {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.checkbox-input__description {
+  margin: 0;
+  padding: 0;
+  font-size: var(--font-size-micro);
+  color: var(--font-color-base);
+}
+
+.checkbox-input__link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
