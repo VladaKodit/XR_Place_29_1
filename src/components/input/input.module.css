@@ -1,0 +1,59 @@
+@import url(../../fonts/index.css);
+@import url(../../css/variables.css);
+@import url(../../css/visually-hidden.css);
+
+:root {
+  --input-border-radius: 40px;
+  --input-bg-color: rgba(241, 244, 247, 1);
+  --input-font-color: #000;
+  --bg-input-font-color: rgba(195, 195, 195, 0.8);
+}
+
+.input {
+  position: relative;
+  font-family: var(--primaty-font-family);
+  background: var(--input-bg-color);
+  border-radius: var(--input-border-radius);
+}
+
+.input__wrapper {
+  min-inline-size: 277px;
+  inline-size: max-content;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 15px 20px;
+}
+
+.input :is(input::placeholder, .input__placeholder) {
+  color: var(--bg-input-font-color);
+}
+
+.input__content {
+  font-family: inherit;
+  flex: 1;
+  padding: 0;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid var(--bg-input-font-color);
+  background: transparent;
+  font-size: var(--font-size-min);
+  color: var(--input-font-color);
+}
+
+.input__tel-selector {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.input__flag-country {
+  inline-size: 20px;
+}
+
+.input__selector-arrow {
+  font-size: 5px;
+  color: var(--bg-input-font-color);
+}
