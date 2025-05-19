@@ -1,0 +1,19 @@
+@use '../fonts' as *;
+
+// font
+$font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', roboto,
+	'Helvetica Neue', arial, 'Noto Sans', 'Liberation Sans', sans-serif,
+	'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !default;
+$primary-font-family: 'Helvetica', system-ui, -apple-system, 'Segoe UI', roboto,
+	'Helvetica Neue', arial, 'Noto Sans', 'Liberation Sans', sans-serif,
+	'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !default;
+$font-size-micro: 10px;
+$font-size-min: 16px;
+$font-size-average: 20px;
+$font-color-base: rgba(77, 77, 77, 1);
+
+// input
+$input-border-radius: 40px;
+$input-bg-color: rgba(241, 244, 247, 1);
+$input-font-color: #000;
+$bg-input-font-color: rgba(195, 195, 195, 0.8);

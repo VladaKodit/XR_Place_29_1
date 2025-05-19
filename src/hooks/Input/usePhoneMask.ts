@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import { PHONE_MASKS } from '../../components/input/helpers/inputConfig';
+import { PHONE_MASKS } from '../../components/Input/helpers/inputConfig';
 import {
   applyMask,
   getDigits,
   getMaskDigitsCount,
-} from '../../components/input/helpers/maskPhoneHelper';
+} from '../../components/Input/helpers/maskPhoneHelper';
 import type {
   CountryCode,
   InputValue,
