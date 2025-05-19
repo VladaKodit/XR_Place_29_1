@@ -1,0 +1,58 @@
+.button {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  width: 348px;
+  color: #fff;
+  background-color: #055042;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 20px;
+  border: inherit;
+  transition: background 0.5s;
+}
+
+.size-small {
+  width: 348px;
+}
+
+.size-medium {
+  width: 564px;
+}
+
+.size-large {
+  width: 1220px;
+}
+
+.type-primary {
+  color: #fff;
+  background-color: #055042;
+}
+
+.type-secondary {
+  color: #000;
+  background-color: #fff;
+}
+
+.secondary {
+  border: 1px solid #000;
+  border-radius: 50%;
+}
+
+.secondary circle {
+  transition: fill 0.5s;
+  fill: #fff;
+}
+
+.button:hover .secondary circle {
+  transition: fill 0.5s;
+  fill: #505050;
+}
+
+.button:hover {
+  transition: background 0.5s;
+  background-color: #505050;
+}
