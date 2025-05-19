@@ -1,17 +1,17 @@
 import { lazy, Suspense } from 'react';
 import type { InputProps } from './type';
 import { getInputData } from './helpers/inputConfig';
-import styles from './input.module.css';
+import styles from './Input.module.scss';
 
 const PhoneInputLogic = lazy(() => import('./PhoneInput/PhoneInput'));
 
 /**
  * Компонент Input
- * @param type - тип imput (абстрактные типы: phone, tg, name, email)
+ * @param type - тип input (абстрактные типы: phone, tg, name, email)
  * @param className - дополнительные классы для стилизации (по умолчанию не используется)
  * @param placeholder - текст placeholder-а (по умолчанию не используется)
  * @param onChange - метод изменения состояния (если его не передать, изменить поле будет невозможно)
- * @param value - уже вписанные текст в input (по умолчанию не используется)
+ * @param value - state текста (нужен что бы была привязка к state)
  * @returns в зависимости от типа возращает нужный input
  */
 export const Input = ({

@@ -6,7 +6,7 @@ import { DATA_FLAGS_SELECTOR, PHONE_MASKS } from '../helpers/inputConfig';
 import type { CountryCode } from '../../../utils/types/Input';
 import { getMaskDigitsCount } from '../helpers/maskPhoneHelper';
 import { type PhoneInputLogicProps } from './type';
-import styles from './PhoneInput.module.css';
+import styles from './PhoneInput.module.scss';
 
 export const PhoneInputLogic = ({
   value,
@@ -74,7 +74,7 @@ export const PhoneInputLogic = ({
         value={phoneMaskApi.internalValue}
         onChange={inputHandlers.handleChange}
         onKeyDown={inputHandlers.handleKeyDown}
-        className={styles.visuallyHidden}
+        className={styles['input__main-phone-input']}
         maxLength={
           getMaskDigitsCount(PHONE_MASKS[phoneMaskApi.selectedFlag]) + 3
         }
