@@ -5,11 +5,7 @@ import {
   getDigits,
   getMaskDigitsCount,
 } from '../../components/Input/helpers/maskPhoneHelper';
-import type {
-  CountryCode,
-  InputValue,
-  AbstractInputType,
-} from '../../utils/types/Input';
+import type { CountryCode, InputValue, AbstractInputType } from '@types';
 
 // хук для использования маски ввода номера в компоненте PhoneInput
 export const usePhoneMask = (

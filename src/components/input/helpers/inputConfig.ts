@@ -1,12 +1,12 @@
-import ruFlag from '../../../assets/flags/ru.svg';
-import enFlag from '../../../assets/flags/en.svg';
+import ruFlag from '@assets/flags/ru.svg';
+import enFlag from '@assets/flags/en.svg';
 import type {
   AbstractInputType,
   InputData,
   DataFlags,
   CountryCode,
   PhoneDataType,
-} from '../../../utils/types/Input';
+} from '@types';
 
 // шаблоны для маски в phone type input
 export const PHONE_MASKS: Record<CountryCode, PhoneDataType> = {

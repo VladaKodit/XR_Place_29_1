@@ -1,9 +1,7 @@
 import { useRef } from 'react';
-import { usePhoneMask } from '../../../hooks';
-import { useDropdown } from '../../../hooks';
-import { useInputHandlers } from '../../../hooks';
+import { usePhoneMask, useDropdown, useInputHandlers } from '@hooks';
 import { DATA_FLAGS_SELECTOR, PHONE_MASKS } from '../helpers/inputConfig';
-import type { CountryCode } from '../../../utils/types/Input';
+import type { CountryCode } from '@types';
 import { getMaskDigitsCount } from '../helpers/maskPhoneHelper';
 import { type PhoneInputLogicProps } from './type';
 import styles from './PhoneInput.module.scss';
