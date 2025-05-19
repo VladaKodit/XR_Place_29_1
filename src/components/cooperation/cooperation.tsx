@@ -1,23 +1,26 @@
-import styles from './clients-trust-us.module.scss';
+import styles from './cooperation.module.scss';
 import { useState } from 'react';
-// import {ReactComponent as ClientsTrustIcon1} from '../../assets/images/clientsTrustIcon1.svg';
-// import ReactComponent from "*.svg"
 
-type TClientsTrustUsProps = {
+type TСooperationProps = {
   title: string;
-  icon: React.ReactNode;
+  icon: {
+    iconDefault: string;
+    iconHover: string;
+  };
   alt: string;
   number: number;
   content: string;
 };
 
-export const ClientsTrustUsCard = ({
+export const CooperationCard = ({
   title,
   icon,
+  alt,
   number,
   content,
-}: TClientsTrustUsProps) => {
+}: TСooperationProps) => {
   const [showInfo, setShowInfo] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   // Переключатель состояния, чтобы при клике содержимое карточки можно было менять
   const handleClick = () => {
@@ -27,13 +30,20 @@ export const ClientsTrustUsCard = ({
   return (
     <>
       {!showInfo ? (
-        <div className={styles.card} onClick={handleClick}>
+        <div
+          className={styles.card}
+          onClick={handleClick}
+          // При наведении мыши меняется состояние isHovered для изменения картинки
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
           <h3 className={styles.card_title}>{title}</h3>
           <div className={styles.card_img}>
-            {icon}
-
-            {/* <ClientsTrustIcon1 /> */}
-            {/* <img className={styles.img} src={image} alt={alt} /> */}
+            <img
+              className={styles.img}
+              src={isHovered ? icon.iconHover : icon.iconDefault}
+              alt={alt}
+            />
           </div>
         </div>
       ) : (
