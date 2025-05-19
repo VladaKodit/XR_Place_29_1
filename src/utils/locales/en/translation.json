@@ -5,6 +5,171 @@
     "features": "Features"
   },
   "hero": {
-    "description": "Convenient tools for presenting objects: create virtual tours with minimal time and resource costs"
+    "description": [
+      "Smart tools for showcasing properties: create virtual tours with minimal time and effort"
+    ],
+    "cta": "Book a demo"
+  },
+  "philosophySection": {
+    "label": "Our Philosophy",
+    "title": "A Trusted Partner in Your Business Success",
+    "description": [
+      "We offer a unique widget for creating virtual tours that allow your clients to explore real estate in an interactive format."
+    ],
+    "slogan": "Transform how you showcase real estate with immersive 3D virtual tours"
+  },
+  "widgetSection": {
+    "label": "Widget",
+    "title": "What Our Widget Can Do",
+    "description": [
+      "Our widget delivers an engaging and realistic experience of your property.",
+      "It helps your clients make informed decisions. We offer easy-to-use solutions that integrate seamlessly into your business."
+    ],
+    "features": [
+      "360° building view",
+      "Layouts and interiors",
+      "Free navigation",
+      "Precise floor plans",
+      "Interactivity",
+      "Cross-platform support"
+    ],
+    "featuresDescription": [
+      "Buyers can view a complete digital replica of the property, even if it's under construction or located abroad.",
+      "The widget allows users to explore floor plans and interior designs, helping them envision their future home more clearly.",
+      "Users can freely move between rooms, making it easier to explore and compare layouts.",
+      "The 3D widget displays exact layouts, including room sizes, window and door placements, and available views.",
+      "Interacting with real estate becomes as engaging as a video game. As a result, users stay longer and are more likely to return.",
+      "The widget works on desktop, mobile, tablets, and even VR headsets in your office to provide an immersive presentation."
+    ]
+  },
+  "cooperationSection": {
+    "label": "Partnership",
+    "title": "Trusted by Clients",
+    "description": "Our clients are part of our team. You can always count on our support and expertise—we strive to build a partnership you’ll genuinely value.",
+    "cards": [
+      {
+        "title": "Boosts website conversion",
+        "description": ""
+      },
+      {
+        "title": "Easy integration",
+        "description": ""
+      },
+      {
+        "title": "Increases trust",
+        "description": ""
+      },
+      {
+        "title": "15% increase in real estate sales",
+        "description": ""
+      },
+      {
+        "title": "Accurate layouts",
+        "description": ""
+      },
+      {
+        "title": "Interactive experience",
+        "description": ""
+      }
+    ]
+  },
+  "projectsSection": {
+    "label": "Partnership",
+    "title": "Featured Projects",
+    "projects": [
+      {
+        "title": "Northern Port",
+        "description": "Real estate agency"
+      },
+      {
+        "title": "MIRA",
+        "description": "Real estate agency"
+      }
+    ]
+  },
+  "howItWorksIntro": {
+    "title": "How It Works",
+    "link": "Discover how it works",
+    "description": [
+      "Our interactive solutions help your clients make smarter real estate decisions.",
+      "Create a memorable experience with our virtual tour technology."
+    ],
+    "cta": "Book a demo"
+  },
+  "teamSection": {
+    "label": "Who We Are",
+    "title": "Business Team",
+    "description": "We understand every business is unique. That’s why we work closely with clients to develop tailored solutions. Our team not only builds technology—we provide support every step of the way.",
+    "footerNote": "With us, you gain not just a product, but a partnership based on trust and mutual understanding.",
+    "members": [
+      {
+        "name": "Artyom Tarkhanov",
+        "position": "Co-founder & CEO"
+      },
+      {
+        "name": "Viktor Karneev",
+        "position": "Co-founder & Production Director"
+      }
+    ]
+  },
+  "faqSection": {
+    "label": "FAQ",
+    "title": "Questions for Our Team",
+    "items": [
+      {
+        "question": "How do I install the widget on my site?",
+        "answer": "Installing the widget is simple and takes just a few steps. After purchase, you'll receive a setup guide and access to our tech support team for assistance at any stage."
+      },
+      {
+        "question": "Can I customize the widget to match my brand?",
+        "answer": "Installing the widget is simple and takes just a few steps. After purchase, you'll receive a setup guide and access to our tech support team for assistance at any stage."
+      },
+      {
+        "question": "How do I create content for the virtual tour?",
+        "answer": "Installing the widget is simple and takes just a few steps. After purchase, you'll receive a setup guide and access to our tech support team for assistance at any stage."
+      },
+      {
+        "question": "Is there a free trial available?",
+        "answer": "Installing the widget is simple and takes just a few steps. After purchase, you'll receive a setup guide and access to our tech support team for assistance at any stage."
+      }
+    ]
+  },
+  "footer": {
+    "contacts": {
+      "title": "Contacts",
+      "address": ["Melikishvili str. 92/16", "6004 Batumi, Georgia"],
+      "copyright": "Copyright ©2024 XR Place"
+    },
+    "menu": {
+      "title": "Menu",
+      "items": ["About", "How it works", "Features", "Book a demo"]
+    },
+    "socials": {
+      "title": "Socials",
+      "items": ["hello@xrlace.io", "Instagram", "LinkedIn"]
+    },
+    "toTop": "Back to top"
+  },
+  "ctaModal": {
+    "title": "Ready to elevate your business?",
+    "description": [
+      "Use our innovative widget to create immersive virtual tours and spark real interest in your properties."
+    ],
+    "form": {
+      "phone": "Phone",
+      "telegram": "Telegram",
+      "email": "Email",
+      "name": "Your name",
+      "checkbox": "I agree to the Privacy Policy",
+      "submit": "Submit"
+    }
+  },
+  "feedbackModal": {
+    "title": "Thank you for your trust",
+    "description": [
+      "Your contact details have been submitted successfully.",
+      "We’ll get in touch with you shortly to go over the details and answer any questions."
+    ],
+    "button": "Back to homepage"
   }
 }
