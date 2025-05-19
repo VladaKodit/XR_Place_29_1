@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import styles from './Navbar.module.scss';
-import type { NavItemProps } from './types.ts';
+import type { NavItemProps } from './types';
 
 const NavItem = ({ href, label, navBarType }: NavItemProps) => {
   const { t } = useTranslation();

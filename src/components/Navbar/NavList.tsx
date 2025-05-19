@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import NavItem from './NavItem.tsx';
+import NavItem from './NavItem';
 import type { NavListProps, NavItemProps } from './types';
 import styles from './Navbar.module.scss';
 
