@@ -4,11 +4,10 @@ import styles from './Button.module.scss';
 import React from 'react';
 interface ButtonProps
   extends React.PropsWithChildren<
-    Omit<React.HTMLProps<HTMLButtonElement>, 'type' | 'size'>
+    Omit<React.HTMLProps<HTMLButtonElement>, 'type'>
   > {
   htmlType: 'button' | 'submit' | 'reset';
   type?: 'primary' | 'secondary';
-  size?: 'small' | 'medium' | 'large';
   onClick?: () => void;
   extraClass?: string;
 }
@@ -23,7 +22,6 @@ interface ButtonProps
 export const Button: FC<ButtonProps> = (props: ButtonProps) => {
   const buttonClasses = [
     styles.button,
-    styles[`size-${props.size}`],
     styles[`type-${props.type}`],
   ]
     .filter(Boolean)
