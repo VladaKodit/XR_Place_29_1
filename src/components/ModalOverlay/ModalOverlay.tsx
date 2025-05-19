@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import styles from './modal-overlay.module.css';
+import styles from './ModalOverlay.module.scss';
 
 /**
  * Компонент оверлея модального окна
@@ -8,7 +8,7 @@ import styles from './modal-overlay.module.css';
  * @param {boolean} props.isOpen - Флаг, указывающий открыто ли модальное окно
  * @returns {JSX.Element} - React элемент оверлея
  */
-export const ModalOverlayUI = ({
+export const ModalOverlay = ({
   onClick,
   isOpen,
 }: {
@@ -21,9 +21,9 @@ export const ModalOverlayUI = ({
   // Эффект для изменения класса анимации при изменении состояния isOpen
   useEffect(() => {
     if (isOpen) {
-      setAnimationClass(styles.visible);
+      setAnimationClass(styles['overlay--visible']);
     } else {
-      setAnimationClass(styles.hidden);
+      setAnimationClass(styles['overlay--hidden']);
     }
   }, [isOpen]);
 
