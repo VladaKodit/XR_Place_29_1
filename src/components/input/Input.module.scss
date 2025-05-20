@@ -1,0 +1,46 @@
+@use '@scss/variables' as *;
+@use '@scss/mixins' as *;
+
+.input {
+  position: relative;
+  font-family: $primary-font-family;
+  background: $input-bg-color;
+  border-radius: $input-border-radius;
+
+  &__wrapper {
+    min-inline-size: 277px;
+    inline-size: max-content;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 15px 20px;
+  }
+
+  &__content {
+    font-family: inherit;
+    flex: 1;
+    padding: 0;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid $bg-input-font-color;
+    background: transparent;
+    font-size: $font-size-min;
+    color: $input-font-color;
+  }
+
+  &__content {
+    font-family: inherit;
+    flex: 1;
+    padding: 0;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid $bg-input-font-color;
+    background: transparent;
+    font-size: $font-size-min;
+    color: $input-font-color;
+  }
+
+  :is(input::placeholder, &__placeholder) {
+    color: $bg-input-font-color;
+  }
+}

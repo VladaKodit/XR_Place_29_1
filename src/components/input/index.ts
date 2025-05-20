@@ -1,2 +1,2 @@
-export { Input } from './input';
+export { Input } from './Input';
 export { CheckboxInput } from './CheckboxInput';

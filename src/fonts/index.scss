@@ -1,0 +1,17 @@
+@use '@scss/mixins' as fonts;
+
+@include fonts.font-face(
+	'Inter',
+	'./fonts/Inter/Inter-Regular',
+	400,
+	normal,
+	ttf
+);
+
+@include fonts.font-face(
+	'Helvetica',
+	'./fonts/Helvetica/HelveticaLight',
+	400,
+	normal,
+	otf
+);

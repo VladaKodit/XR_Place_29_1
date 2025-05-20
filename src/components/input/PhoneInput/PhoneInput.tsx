@@ -1,12 +1,10 @@
 import { useRef } from 'react';
-import { usePhoneMask } from '../../../hooks';
-import { useDropdown } from '../../../hooks';
-import { useInputHandlers } from '../../../hooks';
+import { usePhoneMask, useDropdown, useInputHandlers } from '@hooks';
 import { DATA_FLAGS_SELECTOR, PHONE_MASKS } from '../helpers/inputConfig';
-import type { CountryCode } from '../../../utils/types/Input';
+import type { CountryCode } from '@types';
 import { getMaskDigitsCount } from '../helpers/maskPhoneHelper';
 import { type PhoneInputLogicProps } from './type';
-import styles from './PhoneInput.module.css';
+import styles from './PhoneInput.module.scss';
 
 export const PhoneInputLogic = ({
   value,
@@ -74,7 +72,7 @@ export const PhoneInputLogic = ({
         value={phoneMaskApi.internalValue}
         onChange={inputHandlers.handleChange}
         onKeyDown={inputHandlers.handleKeyDown}
-        className={styles.visuallyHidden}
+        className={styles['input__main-phone-input']}
         maxLength={
           getMaskDigitsCount(PHONE_MASKS[phoneMaskApi.selectedFlag]) + 3
         }
