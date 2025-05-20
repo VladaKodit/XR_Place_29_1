@@ -1,9 +1,5 @@
 import { usePhoneMask } from './usePhoneMask';
-import type {
-  OnChangeType,
-  PhoneMaskApiType,
-  InputRestProps,
-} from '../../utils/types/Input';
+import type { OnChangeType, PhoneMaskApiType, InputRestProps } from '@types';
 
 // хук для обработки изменений phone input
 export const useInputHandlers = (

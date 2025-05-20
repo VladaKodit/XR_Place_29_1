@@ -1,15 +1,11 @@
 import { useState, useEffect } from 'react';
-import { PHONE_MASKS } from '../../components/input/helpers/inputConfig';
+import { PHONE_MASKS } from '../../components/Input/helpers/inputConfig';
 import {
   applyMask,
   getDigits,
   getMaskDigitsCount,
-} from '../../components/input/helpers/maskPhoneHelper';
-import type {
-  CountryCode,
-  InputValue,
-  AbstractInputType,
-} from '../../utils/types/Input';
+} from '../../components/Input/helpers/maskPhoneHelper';
+import type { CountryCode, InputValue, AbstractInputType } from '@types';
 
 // хук для использования маски ввода номера в компоненте PhoneInput
 export const usePhoneMask = (

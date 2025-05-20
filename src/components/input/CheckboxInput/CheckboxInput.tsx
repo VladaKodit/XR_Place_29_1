@@ -1,5 +1,5 @@
 import { type CheckboxInputProps } from './type';
-import styles from './CheckboxInput.module.css';
+import styles from './CheckboxInput.module.scss';
 
 export const CheckboxInput = ({
   description,

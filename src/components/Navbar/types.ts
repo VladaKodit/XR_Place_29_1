@@ -5,3 +5,7 @@ export type NavItemProps = {
 };
 
 export type NavBarType = 'top' | 'bottom';
+export interface NavListProps {
+  items: NavItemProps[];
+  navBarType?: NavBarType;
+}

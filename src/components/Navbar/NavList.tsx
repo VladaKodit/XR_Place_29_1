@@ -1,12 +1,7 @@
 import { Fragment } from 'react';
-import NavItem from './NavItem.tsx';
-import type { NavItemProps, NavBarType } from './types';
+import NavItem from './NavItem';
+import type { NavListProps, NavItemProps } from './types';
 import styles from './Navbar.module.scss';
-
-interface NavListProps {
-  items: NavItemProps[];
-  navBarType?: NavBarType;
-}
 
 const NavList = ({ items, navBarType }: NavListProps) => {
   return items.map((props: NavItemProps, index: number) => (
