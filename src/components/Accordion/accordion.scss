@@ -1,0 +1,101 @@
+@import url(../../fonts/index.css);
+@import url(../../css/variables.css);
+@import url(../../css/visually-hidden.css);
+@import url(../../css/normalizer.css);
+
+body {
+  background-color: #ffffff;
+}
+
+.accordion {
+  min-width: 1240px;
+  border-radius: 8px;
+  font-family: var(--primaty-font-family);
+  color: #191919;
+
+  &__item {
+    border-top: 1px solid #a3a3a3;
+    padding: 20px 0;
+
+    &:last-child {
+      border-bottom: 1px solid #a3a3a3;
+    }
+  }
+
+  &__button {
+    all: unset;
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: var(--font-size-average);
+    transition: transform 0.5s ease;  
+
+    &--up {
+      transform: translateY(-3px);
+    }
+  }
+
+  &__icon {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #5e5e5ee5;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    color: #5e5e5ee5;
+    line-height: 1;
+    font-family: var(--primaty-font-family);
+    padding: 0;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      background-color: currentColor;
+      transition: opacity 0.5s ease;
+    }
+
+    &::before {
+      width: 27px;
+      height: 2px;
+    }
+
+    &::after {
+      height: 27px;
+      width: 2px;
+    }
+
+    &--open {
+      &::after {
+        opacity: 0;
+      }
+    }
+  }
+
+  &__content {
+    font-size: var(--font-size-min);
+    max-width: 900px;
+    color: #4d4d4d;
+    line-height: 1.2;
+
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition:
+      max-height 0.5s ease,
+      opacity 0.5s ease;
+  }
+
+  &__content--open {
+    max-height: 300px;
+    opacity: 1;
+  }
+}
