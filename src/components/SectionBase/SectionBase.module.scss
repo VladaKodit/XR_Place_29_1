@@ -4,26 +4,16 @@
   margin: 0 auto;
   padding: 0 6.94vw; /* 100/1440*100 */
   box-sizing: border-box;
-  position: relative;
- 
 }
 
-.title__wrapper {
-  padding-top: 10.42vw; /* 150/1440*100 */
-  width: 100%;
-}
 
 .content {
   width: 100%;
 }
 
 /* Мобильная адаптация */
-@media (max-width: 360px) {
+@media (max-width: 375px) {
   .wrapper {
-    padding: 0 5.56vw; /* 20/360*100 */
-  }
-  
-  .title__wrapper {
-    padding-top: 16.67vw; /* 60/360*100 */
+    padding: 0 5.33vw; /* 20px */
   }
 }
