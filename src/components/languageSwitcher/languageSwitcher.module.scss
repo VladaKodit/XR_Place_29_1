@@ -1,0 +1,46 @@
+@use '@scss/variables' as *;
+
+
+/* Основной блок */
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 63px;
+}
+
+/* Стиль каждой кнопки */
+.switch-button {
+  position: relative;
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  padding: 4px 0px;
+  cursor: pointer;
+  font-family: $font-family;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: rgba(135, 135, 135, 0.8);
+  // opacity: 0.4;
+
+  &-active {
+    color: #2d2d2d; /* цвет активной кнопки */
+  }
+}
+
+/* Эффект при наведении */
+.switch-button:hover {
+   opacity: 0.4; /* Немного подсветим при наведении */
+}
+
+.switch-button:nth-child(1)::after {
+  content: '';
+  position: absolute;
+  right: -8px; /* Отступ вправо */
+  top: calc(50% - 12px); /* Центровка вертикально */
+  width: 2px;
+  height: 28px;
+  background: rgba(135, 135, 135, 0.8);
+}
