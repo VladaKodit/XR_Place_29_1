@@ -1,8 +1,12 @@
 @use '@scss/variables.scss' as *;
 
+$grid-column: 320px 1fr;
+$padding-tag: 7px 16px;
+$title-windth: 700px;
+
 .container {
   display: grid;
-  grid-template-columns: 320px 1fr;
+  grid-template-columns: $grid-column;
   align-items: start;
 
   .tag {
@@ -13,7 +17,7 @@
     text-transform: uppercase;
     border: 1px solid $color-highlight;
     border-radius: 20px;
-    padding: 7px 16px;
+    padding: $padding-tag;
     display: inline-block;
     white-space: nowrap;
     width: fit-content;
@@ -33,7 +37,7 @@
     line-height: 100%;
     letter-spacing: -0.06em;
     text-transform: uppercase;
-    max-width: 700px;
+    max-width: $title-windth;
 
     .highlight {
       color: $color-highlight;
