@@ -1,21 +1,15 @@
-import type { FC, ReactNode } from 'react';
+import type { FC } from 'react';
 import { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { ModalOverlay } from '../ModalOverlay/ModalOverlay';
 import styles from './Modal.module.scss';
+import type { TModalProps } from './type';
 
 /**
  * Корневой DOM-элемент для порталов модальных окон
  * Должен быть определен в HTML-структуре страницы с id="modals"
  */
 const modalRoot = document.getElementById('modals');
-
-// Типы пропсов для компонента модального окна
-type TModalProps = {
-  onClose: () => void;
-  children: ReactNode;
-  isOpen: boolean;
-};
 
 /**
  * Компонент Modal - обертка для создания модального окна через портал React
