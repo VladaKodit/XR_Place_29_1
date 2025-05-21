@@ -1,6 +1,9 @@
 @use '@scss/variables' as *;
 @use '@scss/mixins' as *;
 
+$max-inline: 277px;
+$padding-inside-input: 15px 20px;
+
 .input {
   position: relative;
   font-family: $primary-font-family;
@@ -8,18 +11,16 @@
   border-radius: $input-border-radius;
 
   &__wrapper {
-    min-inline-size: 277px;
-    inline-size: max-content;
+    min-inline-size: $max-inline;
     display: flex;
     align-items: center;
     gap: 5px;
-    padding: 15px 20px;
+    padding: $padding-inside-input;
   }
 
   &__content {
     font-family: inherit;
     flex: 1;
-    padding: 0;
     outline: none;
     border: none;
     border-bottom: 1px solid $bg-input-font-color;
@@ -31,7 +32,6 @@
   &__content {
     font-family: inherit;
     flex: 1;
-    padding: 0;
     outline: none;
     border: none;
     border-bottom: 1px solid $bg-input-font-color;
