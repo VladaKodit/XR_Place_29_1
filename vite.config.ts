@@ -1,12 +1,5 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-<<<<<<< HEAD
-import svgr from 'vite-plugin-svgr'
-
-// https://vite.dev/config/
-export default defineConfig({
-  plugins: [react(), svgr()]
-=======
 import path from 'path';
 
 // https://vite.dev/config/
@@ -32,5 +25,4 @@ export default defineConfig({
       },
     }
   }
->>>>>>> f903f6e66f89914670d98af62656257ceabfe3b3
 })
