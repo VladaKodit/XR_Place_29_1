@@ -1,0 +1,39 @@
+@use '@scss/variables' as *;
+
+$modal-border-radius: 30px;
+$modal-bg-color: white;
+$translate: translate(-50%, -50%);
+$max-width: 644px;
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 9999;
+  max-width: $max-width;
+  margin: auto;
+  border-radius: $modal-border-radius;
+  padding: 60px 40px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  background: $modal-bg-color;
+  transition: all $transition-default;
+  transform: $translate;
+
+  &--visible {
+    visibility: visible;
+    opacity: 1;
+    transform: $translate scale(1);
+  }
+
+  &--hidden {
+    visibility: hidden;
+    opacity: 0;
+    transform: $translate scale(0.8);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

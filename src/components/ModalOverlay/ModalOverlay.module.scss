@@ -1,0 +1,25 @@
+@use '@scss/variables' as *;
+
+$overlay-bg-color: black;
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  background: $overlay-bg-color;
+  backdrop-filter: blur(25px);
+  transition: all $transition-default;
+
+  &--visible {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &--hidden {
+    visibility: hidden;
+    opacity: 0;
+  }
+}

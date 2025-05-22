@@ -1,11 +1,9 @@
-import React from 'react';
+import { type FC, Fragment } from 'react';
+import { escapeRegExp } from './helpers';
 import type { LabeledTitleProps } from './type';
 import styles from './LabeledTitle.module.scss';
 
-const escapeRegExp = (str: string) =>
-  str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-
-export const LabeledTitle: React.FC<LabeledTitleProps> = ({
+export const LabeledTitle: FC<LabeledTitleProps> = ({
   text,
   highlights = [],
   tag,
@@ -34,7 +32,7 @@ export const LabeledTitle: React.FC<LabeledTitleProps> = ({
               {part}
             </span>
           ) : (
-            <React.Fragment key={index}>{part}</React.Fragment>
+            <Fragment key={index}>{part}</Fragment>
           ),
         )}
       </h2>

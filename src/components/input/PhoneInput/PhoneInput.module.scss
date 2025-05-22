@@ -3,6 +3,9 @@
 
 .input {
   &__phone-display {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
