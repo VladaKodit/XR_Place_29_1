@@ -1,6 +1,6 @@
-:root {
-  --overlay-bg-color: black;
-}
+@use '@scss/variables' as *;
+
+$overlay-bg-color: black;
 
 .overlay {
   position: fixed;
@@ -9,9 +9,9 @@
   bottom: 0;
   left: 0;
   z-index: 2;
-  background: var(--overlay-bg-color);
+  background: $overlay-bg-color;
   backdrop-filter: blur(25px);
-  transition: all 0.5s ease-in-out;
+  transition: all $transition-default;
 
   &--visible {
     visibility: visible;

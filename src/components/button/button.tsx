@@ -1,12 +1,6 @@
-import { type FC, type FunctionComponent, type SVGProps } from 'react';
+import { type FC } from 'react';
 import styles from './Button.module.scss';
-
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  type: 'button' | 'submit' | 'reset';
-  variant?: 'primary' | 'secondary';
-  Icon?: FunctionComponent<SVGProps<SVGSVGElement>>;
-  IconClassName?: string;
-}
+import { type ButtonProps } from './type';
 
 /**
  * Универсальный компонент кнопки с поддержкой иконок

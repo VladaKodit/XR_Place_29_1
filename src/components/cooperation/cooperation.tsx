@@ -1,14 +1,6 @@
-import styles from './cooperation.module.scss';
 import { useState } from 'react';
-
-type TСooperationCardProps = {
-  title: string;
-  iconDefault: string;
-  iconHover: string;
-  alt: string;
-  number: number;
-  content: string;
-};
+import { type TСooperationCardProps } from './type';
+import styles from './Cooperation.module.scss';
 
 export const CooperationCard = ({
   title,
