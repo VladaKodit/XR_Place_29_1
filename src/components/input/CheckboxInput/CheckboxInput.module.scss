@@ -1,0 +1,30 @@
+@use '@scss/variables' as *;
+
+.checkbox-input {
+  font-family: $primary-font-family;
+  display: flex;
+  gap: 4px;
+
+  &__body {
+    background-color: transparent;
+    outline: none;
+    border: none;
+  }
+
+  &__body {
+    background-color: transparent;
+    outline: none;
+    border: none;
+  }
+
+  &__description {
+    font-size: $font-size-micro;
+    color: $font-color-base;
+  }
+
+  &__link {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+}

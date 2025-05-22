@@ -1,14 +1,8 @@
-@font-face {
-  font-family: 'Inter';
-  src: url('./assets/Inter_28pt-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+@use '@scss/variables' as *;
 
 .navbar {
   box-sizing: border-box;
-  font-family: 'Inter', Arial, sans-serif;
+  font-family: $font-family;
   font-size: 1rem;
   font-weight: normal;
   line-height: 1;
@@ -57,7 +51,7 @@
 }
 
 .navItem:hover {
-  color: rgba(5, 80, 66, 1);
+  color: $color-highlight;
 }
 
 .navItemTop {

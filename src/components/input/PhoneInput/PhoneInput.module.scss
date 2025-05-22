@@ -1,0 +1,74 @@
+@use '@scss/variables' as *;
+@use '@scss/mixins' as *;
+
+.input {
+  &__phone-display {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: text;
+    font-size: $font-size-average;
+    border-bottom: none;
+  }
+
+  &__static-char {
+    color: $bg-input-font-color;
+  }
+
+  &__placeholder {
+    color: $bg-input-font-color;
+  }
+
+  &__digit {
+    color: $input-font-color;
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: 100%;
+    left: 20px;
+    margin-top: 5px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    overflow: hidden;
+  }
+
+  &__dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+  }
+
+  &__flag-country {
+    inline-size: 20px;
+  }
+
+  &__selector-arrow {
+    font-size: 5px;
+    color: $bg-input-font-color;
+  }
+
+  &__tel-selector {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  &__main-phone-input {
+    @include visuallyHidden();
+  }
+}

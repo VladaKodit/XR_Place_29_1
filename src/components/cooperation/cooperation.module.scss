@@ -1,0 +1,59 @@
+@use '@scss/variables' as *;
+
+.card {
+  box-sizing: border-box;
+  border: 0.5px solid $font-color-base;
+  border-radius: 30px;
+  width: 417px;
+  height: 185px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: background-color $transition-default;
+
+  &:hover {
+    background-color: #1f1f1f;
+
+    .card__title,
+    .card__number {
+      color: #d9d9d9;
+    }
+  }
+
+  &__title {
+    font-family: $font-family;
+    font-size: $font-size-average;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 120%;
+    letter-spacing: -1.2px;
+    color: #2d2d2d;
+    margin: 0;
+    transition: color $transition-default;
+  }
+
+  &__content {
+    text-transform: none;
+  }
+
+  &__number {
+    font-family: $font-family;
+    font-size: $font-size-title;
+    font-weight: 300;
+    text-transform: uppercase;
+    line-height: 100%;
+    color: #2d2d2d;
+    margin: 0;
+    transition: color $transition-default;
+  }
+
+  &__img {
+    text-align: right;
+    line-height: 1;
+
+    &-icon {
+      width: 64px;
+    }
+  }
+}

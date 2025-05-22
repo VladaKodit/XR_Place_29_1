@@ -1,0 +1,46 @@
+@use '@scss/variables.scss' as *;
+
+$grid-column: 320px 1fr;
+$padding-tag: 7px 16px;
+$title-windth: 700px;
+
+.container {
+  display: grid;
+  grid-template-columns: $grid-column;
+  align-items: start;
+
+  .tag {
+    font-family: $primary-font-family;
+    font-size: $font-size-min;
+    font-weight: $font-weight-light;
+    color: $color-highlight;
+    text-transform: uppercase;
+    border: 1px solid $color-highlight;
+    border-radius: 20px;
+    padding: $padding-tag;
+    display: inline-block;
+    white-space: nowrap;
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .tagEmpty {
+    border: none;
+    color: transparent;
+  }
+
+  .title {
+    font-family: $font-family;
+    font-weight: $font-weight-light;
+    font-size: $font-size-title;
+    color: $font-color-title;
+    line-height: 100%;
+    letter-spacing: -0.06em;
+    text-transform: uppercase;
+    max-width: $title-windth;
+
+    .highlight {
+      color: $color-highlight;
+    }
+  }
+}
