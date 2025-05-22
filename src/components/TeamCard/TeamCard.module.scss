@@ -1,0 +1,199 @@
+.teamCard {
+  position: relative;
+  background-color: #D9D9D9;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 186px;
+  background-color: #D9D9D9;
+  border-radius: 8px;
+  box-sizing: border-box;
+
+  //Четные
+  &.even::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 185px;
+    height: 185px;
+    background: url('src/assets/wave-evenM.svg') no-repeat;
+    background-size: contain;
+    z-index: 0;
+  }
+
+  &.even::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 7px;
+    width: 41px;
+    height: 41px;
+    background: url('/src/assets/dots-evenM.svg') no-repeat;
+    background-size: contain;
+    z-index: 0;
+  }
+
+  //Нечетные
+  &.odd::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    width: 160px;
+    height: 160px;
+    background: url('src/assets/wave-oddM.svg') no-repeat;
+    background-size: contain;
+    z-index: 0;
+  }
+
+  &.odd::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    width: 32px;
+    height: 42px;
+    background: url('src/assets/dots-oddM.svg') no-repeat;
+    background-size: contain;
+    z-index: 0;
+  }
+
+  & .teamCardContent {
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: left;
+    gap: 24px;
+    padding: 16px 0 22px 16px;
+  }
+
+  & .teamCardImage {
+    width: 78px;
+    height: 78px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  & .teamCardText {
+    flex: 1;
+  }
+
+  & .teamCardName {
+    font-family: Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #055042;
+    margin-bottom: 9px;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+  }
+
+  & .teamCardPosition {
+    font-family: Inter, sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    color: #161616;
+    line-height: 120%;
+    letter-spacing: -0.04em;
+  }
+
+  @media (min-width: 1024px) {
+    & .teamCardContent{
+      height: 328px;
+      width: 400px;
+    }
+
+  //Четные
+
+  &.even .teamCardContent {
+    justify-content: end;
+    align-items: end;
+    padding: 10px 20px 0 0;
+    gap: 155px;
+  }
+
+  &.even .teamCardContent .teamCardText {
+    text-align: end;
+  }
+
+  &.even::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 250px;
+    background: url('src/assets/wave-even.svg') no-repeat;
+    background-size: contain;
+    z-index: 0;
+  }
+
+  &.even::after {
+    content: '';
+    position: absolute;
+    bottom: 95px;
+    left: 29px;
+    width: 57px;
+    height: 57px;
+    background: url('/src/assets/dots-even.svg') no-repeat;
+    background-size: contain;
+    z-index: 0;
+  }
+
+  //Нечетные
+
+  &.odd .teamCardContent {
+    padding: 18px 0 0 20px;
+    justify-content: end;
+    gap: 148px;
+  }
+
+  &.odd .teamCardContent .teamCardText {
+    text-align: start;
+  }
+
+  &.odd::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 195px;
+    height: 195px;
+    background: url('src/assets/wave-odd.svg') no-repeat;
+    background-size: contain;
+    z-index: 0;
+  }
+
+  &.odd::after {
+    content: '';
+    position: absolute;
+    top: 19px;
+    right: 35px;
+    width: 51px;
+    height: 51px;
+    background: url('src/assets/dots-odd.svg') no-repeat;
+    background-size: contain;
+    z-index: 0;
+  }
+
+  & .teamCardName {
+    font-size: 38px;
+    margin-bottom: 9px;
+    text-transform: uppercase;
+    letter-spacing: -0.08em;
+  }
+
+  & .teamCardPosition {
+    font-family: Helvetica, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+
+  & .teamCardImage {
+    padding-left: 0;
+  }
+}
+}

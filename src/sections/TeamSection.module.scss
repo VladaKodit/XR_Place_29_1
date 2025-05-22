@@ -1,0 +1,164 @@
+.teamSection {
+  background-color: #FFF;
+  box-sizing: border-box;
+  padding: 13px 25px 0;
+
+  & .content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 82px 25px 32px;
+    text-align: center;
+  }
+
+  & .content:last-child {
+    gap: 30px;
+  }
+
+  & .label_name {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  & .label {
+    max-width: fit-content;
+    max-height: fit-content;
+    font-family: Manrope, sans-serif;
+    font-size: clamp(16px, calc(1rem + ((1vw - 3.6px) * 0.6024)), 20px);
+    font-weight: 400;
+    color: #055042;
+    text-transform: uppercase;
+    text-align: left;
+    border: 1px green solid;
+    padding: 10px 16px;
+    border-radius: 30px;
+    word-spacing: -0.1em;
+  }
+
+  & .title {
+    font-family: Inter, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: -0.08em;
+    font-size: clamp(24px, calc(1.5rem + ((1vw - 3.6px) * 6.0241)), 64px);
+    font-weight: 300;
+    color: #055042;
+    text-align: left;
+  }
+
+  & .text {
+    font-family: Inter, sans-serif;
+    font-size: clamp(16px, calc(1rem + ((1vw - 3.6px) * 0.3012)), 18px);
+    color: #2D2D2D;
+    line-height: 110%;
+    text-align: left;
+    font-weight: 300;
+  }
+
+  & .intro {
+    margin-top: 30px;
+    white-space: pre-line;
+  }
+
+  & .isRowText {
+    margin-bottom: 0;
+  }
+
+  & .finalText {
+    font-size: 18px;
+    white-space: pre-line;
+    margin-top: 10px;
+  }
+
+  & .cardWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  & .grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  @media (min-width: 1024px) {
+    &  {
+      padding: 180px 0 32px;
+    }
+
+    & .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      row-gap: 0;
+      column-gap: 20px;
+      width: 58vw;
+    }
+
+    & .cardWrapper[data-index="0"] {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    & .intro {
+      grid-column: 2;
+      grid-row: 1;
+      white-space: normal;
+      max-width: 100%;
+      padding-right: 1px;
+      margin-top: 0;
+      overflow-wrap: break-word;
+    }
+
+    & .isRowText {
+      grid-column: 2;
+      grid-row: 1;
+      margin: 0 0 11px;
+      align-self: end;
+      padding-right: 30px;
+    }
+
+    & .cardWrapper[data-index="1"] {
+      grid-column: 2;
+      grid-row: 2;
+    }
+
+    & .finalText {
+      grid-column: 1;
+      grid-row: 2;
+      margin: 0;
+      align-self: end;
+      text-align: right;
+      overflow-wrap: break-word;
+    }
+
+    & .cardWrapper[data-index]:not([data-index="0"]):not([data-index="1"]) {
+      grid-column: 2;
+      grid-row: auto;
+    }
+
+    & .label_name {
+      flex-direction: row;
+      gap: 207px;
+      margin-bottom: 60px;
+    }
+
+    & .title {
+      text-align: center;
+      letter-spacing: -0.04em;
+    }
+
+    & .label {
+      margin-left: -200px;
+      margin-top: -3px;
+    }
+
+    & .text {
+      line-height: 120%;
+    }
+
+    & .accent {
+      color: #4D4D4D;
+    }
+  }
+}
