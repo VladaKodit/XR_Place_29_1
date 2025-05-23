@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 export type TСooperationCardProps = {
   title: string;
-  Icon: FC;
+  icon: FC;
   value: string;
   description: string;
   classCard: string;

@@ -6,20 +6,20 @@ import { useTranslation } from 'react-i18next';
 import styles from './CooperationSection.module.scss';
 import type { TСooperationCardProps } from '../../components/CooperationCard/type';
 
-import iconDefault1 from '../../assets/images/cooperationImage1.svg?react';
-import iconDefault2 from '../../assets/images/cooperationImage2.svg?react';
-import iconDefault3 from '../../assets/images/cooperationImage3.svg?react';
-import iconDefault4 from '../../assets/images/cooperationImage4.svg?react';
-import iconDefault5 from '../../assets/images/cooperationImage5.svg?react';
-import iconDefault6 from '../../assets/images/cooperationImage6.svg?react';
+import IconDefault1 from '../../assets/images/cooperationImage1.svg?react';
+import IconDefault2 from '../../assets/images/cooperationImage2.svg?react';
+import IconDefault3 from '../../assets/images/cooperationImage3.svg?react';
+import IconDefault4 from '../../assets/images/cooperationImage4.svg?react';
+import IconDefault5 from '../../assets/images/cooperationImage5.svg?react';
+import IconDefault6 from '../../assets/images/cooperationImage6.svg?react';
 
 const iconArray = [
-  iconDefault1,
-  iconDefault2,
-  iconDefault3,
-  iconDefault4,
-  iconDefault5,
-  iconDefault6,
+  IconDefault1,
+  IconDefault2,
+  IconDefault3,
+  IconDefault4,
+  IconDefault5,
+  IconDefault6,
 ];
 
 export const CooperationSection = () => {
@@ -41,12 +41,12 @@ export const CooperationSection = () => {
     description: item.description,
     value: item.value,
     classCard: 'card',
-    Icon: iconArray[index],
+    icon: iconArray[index],
   }));
 
   return (
-    <SectionBase
-      children={
+    <SectionBase>
+      {
         <>
           <LabeledTitle text={text} highlights={[highlights]} tag={tag} />
 
@@ -61,13 +61,13 @@ export const CooperationSection = () => {
                 title={item.title}
                 description={item.description}
                 value={item.value}
-                Icon={item.Icon}
+                icon={item.icon}
                 classCard={styles[`${item.classCard + `${index + 1}`}`]}
               />
             ))}
           </div>
         </>
       }
-    />
+    </SectionBase>
   );
 };

@@ -4,7 +4,7 @@ import styles from './CooperationCard.module.scss';
 
 export const CooperationCard = ({
   title,
-  Icon,
+  icon: IconComponent,
   value,
   description,
   classCard,
@@ -22,7 +22,9 @@ export const CooperationCard = ({
         {!showInfo ? (
           <>
             <h3 className={styles.card__title}>{title}</h3>
-            <div className={styles.card__img}>{Icon && <Icon />}</div>
+            <div className={styles.card__img}>
+              {IconComponent && <IconComponent />}
+            </div>
           </>
         ) : (
           <>
