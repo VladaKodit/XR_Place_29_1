@@ -15,3 +15,12 @@
 	normal,
 	otf
 );
+
+
+@include fonts.font-face(
+	'Gotham',
+	'./fonts/Gotham/gotham_medium',
+	500,
+	normal,
+	otf
+);

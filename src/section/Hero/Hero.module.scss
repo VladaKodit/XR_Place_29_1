@@ -1,0 +1,109 @@
+@use '@scss/variables' as *;
+
+.container {
+  display: grid;
+  height: 82vh;
+  grid-template-columns: 0.75rem 4.5625rem 21.75rem 3.625rem 15.8125rem 37.1875rem;
+  grid-template-rows: 15.75rem 4.75rem 13.4375rem 12.75rem 11.1875rem;
+  position: relative;
+}
+
+.header {
+  grid-area: 1 / 3 / 2 / 7;
+  align-self: end;
+  margin-top: -1rem;
+  margin-left: 0.5625rem;
+  font: {
+    family: $decoration-font-family;
+    size: 17.5rem;
+  }
+  text-transform: uppercase;
+  letter-spacing: -0.1em;
+  background: linear-gradient(180deg, #056654 0%, #000000 100%);
+  background-clip: text;
+  color: transparent;
+}
+
+.subheader {
+  grid-area: 2 / 5 / auto / auto;
+  margin-top: 0.875rem;
+  margin-left: 0.9375rem;
+  color: $gray-light;
+  font: {
+    family: $primary-font-family;
+    size: $font-size-min;
+  }
+  text-transform: uppercase;
+  letter-spacing: 0.01rem;
+}
+
+.description {
+  grid-area: 4 / 3 / 5 / 4;
+  margin-top: 2.4375rem;
+  margin-left: 0.5rem;
+  font: {
+    family: $font-family;
+    size: 1.375rem;
+  }
+  line-height: 120%;
+  color: $gray-dark;
+  align-self: center;
+}
+
+.image {
+  grid-area: 3 / 6 / 4 / 7;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.cross {
+  grid-area: 4 / 5 / auto / auto;
+  margin-top: -1.5rem;
+  margin-left: -1.375rem;
+}
+
+.square {
+  grid-area: 2 / 3 / auto / auto;
+  margin-top: 3rem;
+  margin-left: 8.75rem;
+}
+
+.cornerArrow {
+  grid-area: 4 / 3 / auto / auto;
+  margin-top: -5.125rem;
+  margin-left: 0.5rem;
+}
+
+.circle {
+  grid-area: 4 / 5 / auto / auto;
+  margin-top: 8.375rem;
+  margin-left: 4.125rem;
+}
+
+.line {
+  background-color: $gray-medium;
+  
+  &1 {
+    grid-area: 1 / 5 / 7 / auto;
+    width: 0.1875rem;
+    height: 100%;
+  }
+  
+  &2 {
+    grid-area: 4 / 2 / auto / 5;
+    width: 100%;
+    height: 0.125rem;
+  }
+  
+  &3 {
+    grid-area: 2 / 5 / auto / 7;
+    width: 101%;
+    height: 0.1875rem;
+  }
+}
+
+.button {
+  grid-area: 5 / 3 / 6 / 4;
+  margin-top: 1.5625rem;
+}
