@@ -1,39 +1,44 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
+import type { TModalHook } from '@types';
 
 // универсальный хук для управления состоянием модального окна
-export const useModal = <T = null>(initialState = false) => {
-  const [isOpen, setIsOpen] = useState(initialState);
+export const useModal: () => TModalHook = () => {
+  // инвариант (условие, которое обязательно соблюдается для хука):
+  // isOpen === (onCloseRef.current !== null)
 
-  // данные, которые передаются в модальное окно
-  const [modalData, setModalData] = useState<T | null>(null);
+  // хранит "true" тогда и только тогда, когда модальное окно открыто
+  const [isOpen, setIsOpen] = useState(false);
+
+  // хранит коллбэк для закрытия модального окна
+  // (1) если нет коллбэка, значит, модальное окно закрыто
+  // (2) если есть коллбэк, значит, он будет вызван после того, как
+  // модальное окно исчезнет с экрана
+  const onCloseRef = useRef<(() => void) | null>(null);
 
   // функция для открытия модального окна
-  const openModal = (data?: T) => {
-    if (data) {
-      setModalData(data);
-    }
+  const openModal = (onClose: () => void) => {
+    onCloseRef.current = onClose;
     setIsOpen(true);
   };
 
   // функция для закрытия модального окна
   const closeModal = () => {
+    const onClose = onCloseRef.current;
+    if (onClose === null) {
+      return;
+    }
+    // помечаем модальное окно как закрытое, чтобы запустилась анимация закрытия
     setIsOpen(false);
-    // очищаем данные после закрытия модалки с задержкой (для анимации)
-    setTimeout(() => setModalData(null), 300);
-  };
-
-  // функция для обработки отправки формы из модального окна
-  const handleSubmit = (formData: T) => {
-    // пока заглушка; с бэком будет API запрос
-    console.log('Отправлено на бэк', formData);
-    closeModal();
+    onCloseRef.current = null;
+    // вызываем коллбэк после закрытия модального окна с задержкой (для анимации)
+    setTimeout(() => {
+      onClose();
+    }, 300);
   };
 
   return {
     isOpen,
-    modalData,
     openModal,
     closeModal,
-    handleSubmit,
   };
 };

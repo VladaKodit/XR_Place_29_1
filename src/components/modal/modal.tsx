@@ -14,17 +14,16 @@ const modalRoot = document.getElementById('modals');
 /**
  * Компонент Modal - обертка для создания модального окна через портал React
  * @param {TModalProps} props - Пропсы компонента модального окна
- * @param {Function} props.onClose - Функция закрытия модального окна
  * @param {ReactNode} props.children - Содержимое модального окна
- * @param {boolean} props.isOpen - Флаг состояния модального окна (открыто/закрыто)
+ * @param {TModalHook} props.modalHook - Хук модального окна
  * @returns {ReactPortal} - React портал с модальным окном и оверлеем
  */
-export const Modal: FC<TModalProps> = ({ onClose, children, isOpen }) => {
+export const Modal: FC<TModalProps> = ({ children, modalHook }) => {
   // Эффект для обработки нажатия клавиши ESC для закрытия модального окна
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
-        onClose();
+        modalHook.closeModal();
       }
     };
 
@@ -35,26 +34,26 @@ export const Modal: FC<TModalProps> = ({ onClose, children, isOpen }) => {
     return () => {
       document.removeEventListener('keydown', handleEsc);
     };
-  }, [onClose]);
+  }, [modalHook]);
 
   // Состояние для управления классом анимации модального окна
   const [animationClass, setAnimationClass] = useState('');
 
   // Эффект для изменения класса анимации при изменении состояния isOpen
   useEffect(() => {
-    if (isOpen) {
+    if (modalHook.isOpen) {
       setAnimationClass(styles['modal--visible']);
     } else {
       setAnimationClass(styles['modal--hidden']);
     }
-  }, [isOpen]);
+  }, [modalHook.isOpen]);
 
   return ReactDOM.createPortal(
     <>
       <div className={`${styles.modal} ${animationClass}`}>
         <div className={styles['modal__content']}>{children}</div>
       </div>
-      <ModalOverlay isOpen={isOpen} onClick={onClose} />
+      <ModalOverlay isOpen={modalHook.isOpen} onClick={modalHook.closeModal} />
     </>,
     modalRoot as HTMLDivElement,
   );
