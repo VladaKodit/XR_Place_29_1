@@ -14,6 +14,7 @@ export default defineConfig({
       '@hooks': path.resolve(__dirname, 'src/hooks/index.ts'),
       '@utils': path.resolve(__dirname, 'src/utils'),
       '@types': path.resolve(__dirname, 'src/utils/types'),
+      '@sections': path.resolve(__dirname, 'src/sections'),
 
       '@scss': path.resolve(__dirname, 'src/scss')
     }
