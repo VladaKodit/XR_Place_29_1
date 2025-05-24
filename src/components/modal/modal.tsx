@@ -38,15 +38,27 @@ export const Modal: FC<TModalProps> = ({ children, modalHook }) => {
 
   // Состояние для управления классом анимации модального окна
   const [animationClass, setAnimationClass] = useState('');
+  const [shouldRender, setShouldRender] = useState(false);
 
   // Эффект для изменения класса анимации при изменении состояния isOpen
   useEffect(() => {
     if (modalHook.isOpen) {
+      setShouldRender(true);
       setAnimationClass(styles['modal--visible']);
     } else {
       setAnimationClass(styles['modal--hidden']);
+
+      // Скрываем модальное окно после завершения анимации
+      setTimeout(() => {
+        setShouldRender(false);
+      }, 300);
     }
   }, [modalHook.isOpen]);
+
+  // Не рендерим портал вообще, если модальное окно закрыто
+  if (!shouldRender) {
+    return null;
+  }
 
   return ReactDOM.createPortal(
     <>
