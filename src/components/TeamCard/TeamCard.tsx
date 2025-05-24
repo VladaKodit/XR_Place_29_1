@@ -2,14 +2,9 @@ import * as React from 'react';
 import styles from './TeamCard.module.scss';
 import type { TeamCardProps } from './type';
 
-const TeamCard: React.FC<TeamCardProps> = ({
-  name,
-  position,
-  imageUrl,
-  waveType,
-}) => {
+const TeamCard: React.FC<TeamCardProps> = ({ name, position, imageUrl }) => {
   return (
-    <div className={`${styles.teamCard} ${styles[waveType]}`}>
+    <div className={styles.teamCard}>
       <div className={styles.teamCardContent}>
         <img
           src={imageUrl}
