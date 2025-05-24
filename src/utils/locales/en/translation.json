@@ -46,31 +46,38 @@
   "cooperationSection": {
     "label": "Partnership",
     "title": "Trusted by Clients",
+    "highlights": "trusted",
     "description": "Our clients are part of our team. You can always count on our support and expertise—we strive to build a partnership you’ll genuinely value.",
     "cards": [
       {
         "title": "Boosts website conversion",
-        "description": ""
-      },
-      {
-        "title": "Easy integration",
-        "description": ""
+        "description": "Average conversion rate to call when connecting our widget on the site.",
+        "value": "18%"
       },
       {
         "title": "Increases trust",
-        "description": ""
-      },
-      {
-        "title": "15% increase in real estate sales",
-        "description": ""
+        "description": "This is how much trust in the developer increases.",
+        "value": "66%"
       },
       {
         "title": "Accurate layouts",
-        "description": ""
+        "description": "Makes up the accuracy of the modeling.",
+        "value": "99%"
+      },
+      {
+        "title": "Easy integration",
+        "description": "On average, it will take time to connect the widget.",
+        "value": "23 minutes"
+      },
+      {
+        "title": "15% increase in real estate sales",
+        "description": "Average increase in incoming requests.",
+        "value": "30%"
       },
       {
         "title": "Interactive experience",
-        "description": ""
+        "description": "Пользователи возвращаются на сайт для повторного просмотра проектов, что говорит о высоком уровне интереса.",
+        "value": "18%"
       }
     ]
   },

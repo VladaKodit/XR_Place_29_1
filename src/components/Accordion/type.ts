@@ -1,4 +1,4 @@
 export type AccordionProps = {
-    title: string,
-    content: string
-}
+  title: string;
+  content: string;
+};

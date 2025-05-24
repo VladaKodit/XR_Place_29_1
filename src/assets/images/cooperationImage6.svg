@@ -1,5 +1,5 @@
 <svg width="80" height="40" viewBox="0 0 80 40" fill="none" xmlns="http://www.w3.org/2000/svg">
 <circle cx="20" cy="20" r="20" fill="#7C7C7C"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M40 0L40 40C51.0457 40 60 31.0457 60 20C60 8.95431 51.0457 0 40 0Z" fill="#7C7C7C"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M60 0L60 40C71.0457 40 80 31.0457 80 20C80 8.95431 71.0457 0 60 0Z" fill="#7C7C7C"/>
+<path className="icon__hover-light" fill-rule="evenodd" clip-rule="evenodd" d="M60 0L60 40C71.0457 40 80 31.0457 80 20C80 8.95431 71.0457 0 60 0Z" fill="#7C7C7C"/>
 </svg>
