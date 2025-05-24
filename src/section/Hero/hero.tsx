@@ -7,6 +7,7 @@ import Cross from '../../assets/images/sectionHero/cross.svg?react';
 import CornerArrow from '../../assets/images/sectionHero/corner_arrow.svg?react';
 import Square from '../../assets/images/sectionHero/square.svg?react';
 import Circle from '../../assets/images/sectionHero/circle.svg?react';
+import image from '../../assets/images/sectionHero/Frame.jpg';
 
 export const Hero: FC = () => {
   const { t } = useTranslation();
@@ -27,11 +28,7 @@ export const Hero: FC = () => {
         place for business
       </p>
 
-      <img
-        className={style.image}
-        src="src\assets\images\sectionHero\Frame.jpg"
-        alt="3Д модель"
-      />
+      <img className={style.image} src={image} alt="3Д модель" />
 
       <p className={style.description}>{t('hero.description.0')}</p>
       <Button
