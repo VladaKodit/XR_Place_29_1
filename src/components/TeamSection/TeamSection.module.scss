@@ -211,7 +211,7 @@
       color: #4D4D4D;
     }
 
-    /* Стили для чётных карточек (десктоп) */
+    /* Стили для чётных карточек. (десктоп) */
     & .cardWrapper:nth-of-type(even) > div > div {
       justify-content: end;
       align-items: end;
