@@ -5,3 +5,4 @@ export * from './Button';
 export * from './Cooperation';
 export * from './Modal';
 export * from './ModalOverlay';
+export * from './TabSwitcher';
