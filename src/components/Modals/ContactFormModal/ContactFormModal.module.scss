@@ -1,0 +1,58 @@
+@use '@scss/variables' as *;
+@use '@scss/mixins' as *;
+
+.close {
+  position: absolute;
+  top: 1.875rem;
+  right: 2rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.contactFormModal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.firstLine {
+  display: flex;
+  flex-direction: raw;
+  gap: 0.625rem;
+}
+
+.button {
+  margin-top: 2rem;
+}
+
+.checkbox {
+  padding-left: 1.25rem;
+}
+
+.title {
+  color: $modal-title-font-color;
+  font-family: $font-family;
+  font-weight: $font-weight-modal-title;
+  font-size: $font-size-modal-title;
+  line-height: 100%;
+  letter-spacing: -6%;
+  text-transform: uppercase;
+}
+
+.description {
+  color: $font-color-base;
+  font-family: $font-family;
+  font-weight: $font-weight-modal-description;
+  font-size: $font-size-average;
+  line-height: 110.00000000000001%;
+  letter-spacing: -2%;
+}
