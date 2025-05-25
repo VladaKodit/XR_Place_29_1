@@ -3,4 +3,5 @@ export type CaseProps = {
   imageAlt?: string;
   title: string;
   description: string[];
+  style?: React.CSSProperties;
 };

@@ -4,5 +4,5 @@ import type { LabeledTitleProps } from '../../components/LabeledTitle/type.ts';
 export type CaseSectionProps = {
   sectionTitle: LabeledTitleProps; // заголовок и тег секции
   cases: CaseProps[]; // массив карточек
-  onSeeMoreClick?: () => void; // для "посмотреть больше"
+  onSeeMoreClick?: () => void; // для ссылки
 };

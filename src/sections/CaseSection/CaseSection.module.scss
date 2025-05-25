@@ -1,0 +1,81 @@
+.case-section {
+  &__carousel {
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    margin-left: -100px;
+    flex-direction: column;
+  }
+
+  &__carousel-inner {
+    display: flex;
+    gap: 30px;
+    will-change: transform;
+    scroll-behavior: smooth;
+    padding-left: 100px;
+  }
+
+  &__carousel-item {
+    flex: 0 0 auto;
+    width: 930px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &__grid-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 55px;
+    column-gap: 20px;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: $primary-font-family;
+    font-size: $font-size-average;
+    font-weight: $font-weight-regular;
+    color: $case-link-color;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  &__link-icon {
+    width: 16px;
+    height: 28px;
+    flex-shrink: 0;
+  }
+
+  &__carousel-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 28px;
+    padding-right: 100px;
+  }
+
+  &__button {
+    display: flex;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 47px;
+    height: 8px;
+    padding-bottom: 55px;
+
+    &.disabled {
+      pointer-events: none;
+
+      svg path {
+        stroke: $arrow-disabled-color;
+      }
+    }
+  }
+}

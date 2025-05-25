@@ -2,11 +2,24 @@ import React from 'react';
 import type { CaseProps } from './type';
 import styles from './Case.module.scss';
 
+/**
+ * Компонент карточки кейса.
+ *
+ * @component
+ * @param {string} imageUrl - URL изображения.
+ * @param {string} [imageAlt] - Альтернативный текст изображения.
+ * @param {string} title - Заголовок кейса.
+ * @param {string[]} description - Описание кейса.
+ * @param {React.CSSProperties} [style] - Дополнительные стили.
+ * @returns {JSX.Element} возвращает карточку кейса.
+ */
+
 export const Case: React.FC<CaseProps> = ({
   title,
   description,
   imageUrl,
   imageAlt,
+  style,
 }) => {
   return (
     <div className={styles.case}>
@@ -15,6 +28,7 @@ export const Case: React.FC<CaseProps> = ({
         src={imageUrl}
         alt={imageAlt || title}
         className={styles['case-image']}
+        style={style}
       />
       <h3 className={styles['case-title']}>{title}</h3>
       <div className={styles['case-description']}>
