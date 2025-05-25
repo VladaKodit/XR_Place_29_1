@@ -19,6 +19,12 @@ const modalRoot = document.getElementById('modals');
  * @returns {ReactPortal} - React портал с модальным окном и оверлеем
  */
 export const Modal: FC<TModalProps> = ({ children, modalHook }) => {
+  // Состояние для управления классом анимации модального окна
+  const [animationClass, setAnimationClass] = useState('modal--hidden');
+
+  // Состояние, которое используется, чтобы не рендерить компонент до окончания инициализации
+  const [shouldRender, setShouldRender] = useState(false);
+
   // Эффект для обработки нажатия клавиши ESC для закрытия модального окна
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
@@ -36,26 +42,21 @@ export const Modal: FC<TModalProps> = ({ children, modalHook }) => {
     };
   }, [modalHook]);
 
-  // Состояние для управления классом анимации модального окна
-  const [animationClass, setAnimationClass] = useState('');
-  const [shouldRender, setShouldRender] = useState(false);
-
   // Эффект для изменения класса анимации при изменении состояния isOpen
   useEffect(() => {
     if (modalHook.isOpen) {
-      setShouldRender(true);
       setAnimationClass(styles['modal--visible']);
     } else {
       setAnimationClass(styles['modal--hidden']);
-
-      // Скрываем модальное окно после завершения анимации
-      setTimeout(() => {
-        setShouldRender(false);
-      }, 300);
     }
   }, [modalHook.isOpen]);
 
-  // Не рендерим портал вообще, если модальное окно закрыто
+  // Эффект для того, чтобы начать рендерить компонент после инициализации
+  useEffect(() => {
+    setShouldRender(true);
+  }, []);
+
+  // Не рендерим портал вообще, если компонент не окончил инициализацию
   if (!shouldRender) {
     return null;
   }
