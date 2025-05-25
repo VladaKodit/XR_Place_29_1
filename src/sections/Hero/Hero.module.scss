@@ -2,10 +2,8 @@
 
 .container {
   display: grid;
-  height: 82vh;
   grid-template-columns: 0.75rem 4.5625rem 21.75rem 3.625rem 15.8125rem 37.1875rem;
   grid-template-rows: 15.75rem 4.75rem 13.4375rem 12.75rem 11.1875rem;
-  position: relative;
 }
 
 .header {
@@ -51,10 +49,12 @@
 }
 
 .image {
-  grid-area: 3 / 6 / 4 / 7;
+  grid-area: 3 / 6 / 6 /7;
   display: block;
   object-fit: cover;
   object-position: center;
+  width: 100%;
+  height: 100%;
 }
 
 .cross {

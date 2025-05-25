@@ -36,6 +36,7 @@ export const Hero: FC = () => {
         type={'button'}
         children={t('hero.cta')}
         Icon={Arrow}
+        onClick={() => console.log('click')}
       />
     </div>
   );
