@@ -23,19 +23,21 @@ const TeamSection: React.FC = () => {
     .split('.')
     .map((text) => text.trim());
 
-  // Выделил "Бизнес" для акцента
-  const accentText = t('teamSection.title').startsWith('Бизнес')
-    ? 'Бизнес'
-    : 'Business';
-  const titleRest = t('teamSection.title').replace(accentText, '').trim();
+  // Подсветил слово из highlights
+  const highlightWord = t('teamSection.highlights');
+  const titleHtml = t('teamSection.title').replace(
+    highlightWord,
+    `<span class="${styles.accent}">${highlightWord}</span>`,
+  );
 
   return (
     <SectionBase containerClassName={styles.teamSection}>
       <div className={styles.label_name}>
         <h4 className={styles.label}>{t('teamSection.label')}</h4>
-        <h2 className={styles.title}>
-          <span className={styles.accent}>{accentText}</span> {titleRest}
-        </h2>
+        <h2
+          className={styles.title}
+          dangerouslySetInnerHTML={{ __html: titleHtml }}
+        />
       </div>
       <div className={styles.grid}>
         <p className={`${styles.text} ${styles.intro}`}>{introText}.</p>
