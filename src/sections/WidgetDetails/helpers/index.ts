@@ -1,0 +1,1 @@
+export { buildFeaturesTabData } from './featuresData';

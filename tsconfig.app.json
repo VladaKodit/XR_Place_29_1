@@ -31,6 +31,7 @@
       "@components": ["src/components"],
       "@hooks": ["src/hooks"],
       "@utils": ["src/utils"],
+      "@sections": ["src/sections"],
       "@types": ["src/utils/types"]
     }
   },
