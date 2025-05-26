@@ -5,7 +5,7 @@ import Navbar from '../../components/Navbar/Navbar';
 import ArrowIcon from '../../assets/footer/arrow.svg?react';
 import XrPlaceLogo from '../../assets/footer/xrplace.svg';
 
-const Footer = () => {
+export const Footer = () => {
   const { t } = useTranslation();
 
   const menuItems = [
