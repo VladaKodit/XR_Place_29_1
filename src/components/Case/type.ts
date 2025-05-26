@@ -1,5 +1,5 @@
 export type CaseProps = {
-  imageUrl: string;
+  image: string;
   imageAlt?: string;
   title: string;
   description: string[];

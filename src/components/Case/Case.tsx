@@ -6,7 +6,7 @@ import styles from './Case.module.scss';
  * Компонент карточки кейса.
  *
  * @component
- * @param {string} imageUrl - URL изображения.
+ * @param {string} image - Путь к изображению .
  * @param {string} [imageAlt] - Альтернативный текст изображения.
  * @param {string} title - Заголовок кейса.
  * @param {string[]} description - Описание кейса.
@@ -17,7 +17,7 @@ import styles from './Case.module.scss';
 export const Case: React.FC<CaseProps> = ({
   title,
   description,
-  imageUrl,
+  image,
   imageAlt,
   style,
 }) => {
@@ -25,7 +25,7 @@ export const Case: React.FC<CaseProps> = ({
     <div className={styles.case}>
       <img
         loading="lazy"
-        src={imageUrl}
+        src={image}
         alt={imageAlt || title}
         className={styles['case-image']}
         style={style}

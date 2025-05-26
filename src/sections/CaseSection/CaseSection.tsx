@@ -14,13 +14,11 @@ import ArrowIcon from '../../assets/svg/arrow-icon.svg?react';
  * Секция с кейсами, отображающая их в виде карусели или сетки в зависимости от количества.
  *
  * @component
- * @param {LabeledTitleProps} sectionTitle - Заголовок секции.
  * @param {CaseProps[]} cases - Массив кейсов.
  * @param {() => void} [onSeeMoreClick] - Обработчик клика по ссылке "Смотреть все проекты".
  * @returns {JSX.Element} Элемент секцию с кейсами.
  */
 export const CaseSection: React.FC<CaseSectionProps> = ({
-  sectionTitle,
   cases,
   onSeeMoreClick,
 }) => {
@@ -39,8 +37,12 @@ export const CaseSection: React.FC<CaseSectionProps> = ({
 
   return (
     <SectionBase containerClassName={styles['case-section']}>
-      <LabeledTitle {...sectionTitle} />
-
+      {/* Заголовок и тег*/}
+      <LabeledTitle
+        text="реализованные проекты"
+        tag="сотрудничество"
+        highlights={['проекты']}
+      />
       {/* Если карточек > 1 и <= 4 (карусель) */}
       {isCarousel && (
         <div className={styles['case-section__carousel']}>
@@ -126,7 +128,9 @@ export const CaseSection: React.FC<CaseSectionProps> = ({
 
       {/* Если одна карточка */}
       {!isCarousel && !isGrid && cases.length === 1 && (
-        <Case {...cases[0]} style={{ marginTop: '60px' }} />
+        <div className={styles['case-section__single']}>
+          <Case {...cases[0]} />
+        </div>
       )}
     </SectionBase>
   );
