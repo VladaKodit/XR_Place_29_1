@@ -9,8 +9,8 @@ import type { TeamMember } from './type';
 import artemImage from '../../assets/Artem_Tarhanov.png';
 import viktorImage from '../../assets/Viktor_Korneev.png';
 
-const TeamSection: React.FC = () => {
-  const { t } = useTranslation();
+export const TeamSection: React.FC = () => {
+  const { t, i18n } = useTranslation();
 
   const teamMembers = (
     t('teamSection.members', { returnObjects: true }) as TeamMember[]
@@ -19,10 +19,22 @@ const TeamSection: React.FC = () => {
     imageUrl: index === 0 ? artemImage : viktorImage,
   }));
 
-  // Разделил description на два абзаца
-  const [introText, rowText] = t('teamSection.description')
+  // Делим description на части в зависимости от языка
+  const sentences = t('teamSection.description')
     .split('.')
-    .map((text) => text.trim());
+    .map((text) => text.trim())
+    .filter((text) => text);
+
+  let introText: string, rowText: string;
+  if (i18n.language === 'en') {
+    // Английский: первые два предложения в introText, третье в rowText
+    introText = sentences.slice(0, 2).join('. ');
+    rowText = sentences[2] || '';
+  } else {
+    // Русский: первое в introText, второе в rowText
+    introText = sentences[0] || '';
+    rowText = sentences[1] || '';
+  }
 
   return (
     <SectionBase containerClassName={styles.teamSection}>
