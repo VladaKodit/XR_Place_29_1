@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { SectionBase } from '../../components/SectionBase/SectionBase';
 import TeamCard from '../../components/TeamCard/TeamCard';
+import { LabeledTitle } from '../../components/LabeledTitle/LabeledTitle';
 import styles from './TeamSection.module.scss';
 import { useTranslation } from 'react-i18next';
 import type { TeamMember } from './type';
@@ -23,39 +24,34 @@ const TeamSection: React.FC = () => {
     .split('.')
     .map((text) => text.trim());
 
-  // Подсветил слово из highlights
-  const highlightWord = t('teamSection.highlights');
-  const titleHtml = t('teamSection.title').replace(
-    highlightWord,
-    `<span class="${styles.accent}">${highlightWord}</span>`,
-  );
-
   return (
     <SectionBase containerClassName={styles.teamSection}>
-      <div className={styles.label_name}>
-        <h4 className={styles.label}>{t('teamSection.label')}</h4>
-        <h2
-          className={styles.title}
-          dangerouslySetInnerHTML={{ __html: titleHtml }}
-        />
-      </div>
-      <div className={styles.grid}>
-        <p className={`${styles.text} ${styles.intro}`}>{introText}.</p>
-        {teamMembers.map((member, index) => (
-          <React.Fragment key={index}>
-            <div className={styles.cardWrapper} data-index={index}>
-              <TeamCard {...member} />
-            </div>
-            {index < teamMembers.length - 1 && (
-              <p className={`${styles.text} ${styles.isRowText}`}>{rowText}.</p>
-            )}
-            {index === teamMembers.length - 1 && (
-              <p className={`${styles.text} ${styles.finalText}`}>
-                {t('teamSection.footerNote')}
-              </p>
-            )}
-          </React.Fragment>
-        ))}
+      <LabeledTitle
+        text={t('teamSection.title')}
+        highlights={[t('teamSection.highlights')]}
+        tag={t('teamSection.label')}
+      />
+      <div className={styles.grid_container}>
+        <div className={styles.grid}>
+          <p className={`${styles.text} ${styles.intro}`}>{introText}.</p>
+          {teamMembers.map((member, index) => (
+            <React.Fragment key={index}>
+              <div className={styles.cardWrapper} data-index={index}>
+                <TeamCard {...member} />
+              </div>
+              {index < teamMembers.length - 1 && (
+                <p className={`${styles.text} ${styles.isRowText}`}>
+                  {rowText}.
+                </p>
+              )}
+              {index === teamMembers.length - 1 && (
+                <p className={`${styles.text} ${styles.finalText}`}>
+                  {t('teamSection.footerNote')}
+                </p>
+              )}
+            </React.Fragment>
+          ))}
+        </div>
       </div>
     </SectionBase>
   );
