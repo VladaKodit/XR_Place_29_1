@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import styles from './Footer.module.scss';
 import Navbar from '../../components/Navbar/Navbar';
-import ArrowIcon from '../../assets/footer/arrow.svg';
+import ArrowIcon from '../../assets/footer/arrow.svg?react';
 import XrPlaceLogo from '../../assets/footer/xrplace.svg';
 
 const Footer = () => {
@@ -48,7 +48,7 @@ const Footer = () => {
         <div className={styles.backToTop}>
           <a href="#top" className={styles.backToTop__link}>
             {t('footer.toTop')}
-            <img src={ArrowIcon} alt="arrow" className={styles.arrow}></img>
+            <ArrowIcon></ArrowIcon>
           </a>
         </div>
       </div>

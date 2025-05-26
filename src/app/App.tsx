@@ -1,11 +1,5 @@
-import Footer from '../../src/sections/Footer/Footer';
-
 function App() {
-  return (
-    <div>
-      <Footer></Footer>
-    </div>
-  );
+  return <div></div>;
 }
 
 export default App;
