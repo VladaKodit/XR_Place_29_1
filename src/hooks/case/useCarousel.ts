@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 
-const ITEM_WIDTH = 800;
+const ITEM_WIDTH = 760;
 
 export function useCarousel(length: number) {
   const [currentIndex, setCurrentIndex] = useState(0);

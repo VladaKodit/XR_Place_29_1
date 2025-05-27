@@ -21,8 +21,6 @@ $font-size-large: 2.5rem;        // 40px
 $font-size-title: 4rem;          // 64px
 
 $font-color-base: rgba(77, 77, 77, 1);
-$font-color-title: #202021;
-$color-highlight: #055042;
 
 // transition
 $transition-default: 0.5s ease-in-out;
@@ -40,3 +38,10 @@ $case-text-color: #4D4D4D;
 $case-text-descrption-color: #2D2D2D;
 $case-link-color:#4D4D4D;
 $arrow-disabled-color: #c3c3c3cc;
+
+// labeledTitle
+$color-highlight: #055042;
+$labeledTitle-grid-column: 320px 1fr;
+$labeledTitle-padding-tag: 7px 16px;
+$labeledTitle-title-windth: 700px;
+$font-color-title: #202021;
