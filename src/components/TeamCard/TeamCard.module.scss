@@ -1,0 +1,74 @@
+.teamCard {
+  --card-bg-color: #D9D9D9;
+
+  position: relative;
+  background-color: var(--card-bg-color);
+  width: 100%;
+  margin: 0 auto;
+  min-height: 186px;
+  border-radius: 8px;
+  box-sizing: border-box;
+
+  & .teamCardContent {
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: left;
+    gap: 24px;
+    padding: 16px 0 22px 16px;
+  }
+
+  & .teamCardImage {
+    width: 78px;
+    height: 78px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  & .teamCardText {
+    flex: 1;
+  }
+
+  & .teamCardName {
+    font-family: Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #055042;
+    margin-bottom: 9px;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+  }
+
+  & .teamCardPosition {
+    font-family: Inter, sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    color: #161616;
+    line-height: 120%;
+    letter-spacing: -0.04em;
+  }
+
+  @media (min-width: 1024px) {
+
+    & .teamCardContent {
+      height: 328px;
+      width: 100%;
+    }
+
+    & .teamCardName {
+      font-size: 38px;
+      margin-bottom: 9px;
+      text-transform: uppercase;
+      letter-spacing: -0.08em;
+    }
+
+    & .teamCardPosition {
+      font-family: Helvetica, sans-serif;
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+  }
+}
