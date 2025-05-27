@@ -12,11 +12,17 @@
   },
   "philosophySection": {
     "label": "Our Philosophy",
-    "title": "A Trusted Partner in Your Business Success",
+    "title": "Partner in Your Business Success",
+    "highlights": ["Success"],
     "description": [
       "We offer a unique widget for creating virtual tours that allow your clients to explore real estate in an interactive format."
     ],
-    "slogan": "Transform how you showcase real estate with immersive 3D virtual tours"
+    "slogan": [
+      "Feel the transform",
+      "feelings you showcase real estate",
+      "with immersive virtial",
+      "3D tours"
+    ]
   },
   "widgetSection": {
     "label": "Widget",

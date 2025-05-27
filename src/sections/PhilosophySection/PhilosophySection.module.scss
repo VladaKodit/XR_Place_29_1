@@ -1,0 +1,68 @@
+/*
+  Эта секция целиком и полностью на абсолютном позиционировании,
+  потому выбор пал поставить минимальную длину секции, а дальше,
+  для адаптивной верстки задавать ее кейфреймами.
+*/
+
+@use '@scss/variables' as *;
+
+.philosophy-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  width: 100%;
+  min-width: 1240px;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  &__content-upper {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 230px;
+  }
+
+  &__description {
+    color: var(--Text-Primary-Grey, #5E5E5D);
+    max-width: 398px;
+    font-family: $font-family;
+    font-size: $font-size-regular;
+    font-weight: $font-weight-light;
+    line-height: 120%;
+  }
+
+  &__slogan {
+    position: relative;
+    text-transform: uppercase;
+    font-family: $font-family;
+    font-size: 34px;
+    font-weight: $font-weight-light;
+    line-height: 120%;
+    position: absolute;
+    left: 400px;
+    letter-spacing: -2.72px;
+    top: 170px;
+    min-width: 80%;
+
+    &-span-2 {
+      position: absolute;
+      right: 100px;
+      min-width: 100%;
+    }
+    &-span-3 {
+      position: absolute;
+      left: 100px;
+      bottom: -80px;
+    }
+  }
+  .dots-image {
+    position: absolute;
+    top: 100%;
+    left: 100%;
+  }
+}
