@@ -63,7 +63,9 @@ export const Modal: FC<TModalProps> = ({ children, modalHook }) => {
 
   return ReactDOM.createPortal(
     <>
-      <div className={`${styles.modal} ${animationClass}`}>
+      <div
+        className={`${styles.modal} ${styles['modal--visible']} ${animationClass}`}
+      >
         <div className={styles['modal__content']}>{children}</div>
       </div>
       <ModalOverlay isOpen={modalHook.isOpen} onClick={modalHook.closeModal} />
