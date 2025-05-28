@@ -1,0 +1,96 @@
+@use '@scss/variables' as *;
+
+$container-width: 1440px;
+$container-min-height: 942px;
+
+$padding-top-header: 138px;
+
+$padding-left-text-block: 19.75rem;
+$text-block-max-width: 45rem;
+$text-block-gap: 1.25rem;
+$text-block-padding-top: 1.25rem;
+$text-block-margin-bottom: 2.5rem;
+
+$text-block-width-clamp: clamp(20rem, calc(25vw + 7.5rem), 25.05rem);
+
+$line-gradient: linear-gradient(90deg, #055042 0%, #0BB696 100%);
+$line-z-index: 1;
+
+.container {
+  width: $container-width;
+  min-height: $container-min-height;
+}
+
+.containerHeaderBlock {
+  padding-top: $padding-top-header;
+}
+
+.containerTextBlock {
+  display: flex;
+  flex-direction: column;
+  padding-left: $padding-left-text-block;
+  max-width: $text-block-max-width;
+  gap: $text-block-gap;
+  padding-top: $text-block-padding-top;
+  margin-bottom: $text-block-margin-bottom;
+}
+
+.textBlock {
+  font-family: $font-family;
+  font-size: $font-size-regular;
+  font-weight: $font-weight-light;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: $font-color-base;
+  width: $text-block-width-clamp;
+  text-align: left;
+}
+
+.textBlockRightSide {
+  @extend .textBlock;
+  align-self: flex-end;
+  max-width: 23rem;
+}
+
+.sectionWithLines {
+  position: relative;
+}
+
+.leftLine,
+.topLine,
+.rightLine,
+.lineDot {
+  background: $line-gradient;
+  z-index: $line-z-index;
+  position: absolute;
+}
+
+.leftLine {
+  top: 0;
+  left: 6.94vw;
+  width: 1px;
+  height: 85px;
+}
+
+.topLine {
+  top: 85px;
+  left: 6.94vw;
+  right: 6.94vw;
+  height: 1px;
+}
+
+.rightLine {
+  top: 85px;
+  right: 6.94vw;
+  width: 1px;
+  height: 330px;
+}
+
+.lineDot {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}

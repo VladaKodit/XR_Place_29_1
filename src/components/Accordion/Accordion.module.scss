@@ -1,0 +1,104 @@
+// @import url(../../fonts/index.scss);
+// @import url(../../css/variables.scss);
+// @import url(../../css/visually-hidden.scss);
+// @import url(../../css/normalizer.scss);
+
+@use '@scss/variables.scss' as *;
+
+body {
+  background-color: #ffffff;
+}
+
+.accordion {
+  min-width: 77.5rem;
+  border-radius: 8px;
+  font-family: $primary-font-family;
+  color: #191919;
+
+  &__item {
+    border-top: 1px solid #a3a3a3;
+    padding: 1.25rem;
+
+    &:last-child {
+      border-bottom: 1px solid #a3a3a3;
+    }
+  }
+
+  &__button {
+    all: unset;
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: $font-size-average;
+    transition: transform 0.5s ease;  
+    text-transform: uppercase;
+
+    &--up {
+      transform: translateY(-3px);
+    }
+  }
+
+  &__icon {
+    width: 3.125rem;
+    height: 3.125rem;
+    border: 1px solid #5e5e5ee5;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    color: #5e5e5ee5;
+    line-height: 1;
+    font-family: $primary-font-family;
+    padding: 0;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      background-color: currentColor;
+      transition: opacity 0.5s ease;
+    }
+
+    &::before {
+      width: 1.688rem;
+      height: 0.125rem;
+    }
+
+    &::after {
+      height: 1.688rem;
+      width: 0.125rem;
+    }
+
+    &--open {
+      &::after {
+        opacity: 0;
+      }
+    }
+  }
+
+  &__content {
+    font-size: $font-size-min;
+    max-width: 56.25rem;
+    color: #4d4d4d;
+    line-height: 1.2;
+
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition:
+      max-height 0.5s ease,
+      opacity 0.5s ease;
+  }
+
+  &__content--open {
+    max-height: 18.75rem;
+    opacity: 1;
+  }
+}
