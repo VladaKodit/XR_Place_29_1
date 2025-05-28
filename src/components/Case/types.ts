@@ -1,4 +1,10 @@
-import type { CaseProps } from '../../components/Case/type.ts';
+export type CaseProps = {
+  image: string;
+  imageAlt?: string;
+  title: string;
+  description: string[];
+  style?: React.CSSProperties;
+};
 
 export type CaseListProps = {
   cases: CaseProps[]; // массив карточек

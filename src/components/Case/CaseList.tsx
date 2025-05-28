@@ -1,9 +1,9 @@
 import React from 'react';
-import { Case } from '../../components/Case';
-import styles from './CaseList.module.scss';
+import { Case } from '../Case';
+import styles from './Case.module.scss';
 import { useCarousel } from '@hooks';
 
-import type { CaseListProps } from './type';
+import type { CaseListProps } from './types';
 
 import ArrowIcon from '../../assets/svg/arrow-icon.svg?react';
 import LeftArrow from '../../assets/svg/arrow-left.svg?react';
@@ -18,10 +18,7 @@ import RightArrow from '../../assets/svg/arrow-right.svg?react';
  * @returns {JSX.Element} Элемент секцию с кейсами.
  */
 
-export const CaseList: React.FC<CaseListProps> = ({
-  cases,
-  onSeeMoreClick,
-}) => {
+const CaseList: React.FC<CaseListProps> = ({ cases, onSeeMoreClick }) => {
   //логика отображения
   const isCarousel = cases.length > 1 && cases.length < 4;
   const isGrid = cases.length >= 4;
@@ -129,3 +126,5 @@ export const CaseList: React.FC<CaseListProps> = ({
     </>
   );
 };
+
+export default CaseList;

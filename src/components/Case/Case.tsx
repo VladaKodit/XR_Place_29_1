@@ -1,5 +1,6 @@
 import React from 'react';
-import type { CaseProps } from './type';
+import { useTranslation } from 'react-i18next';
+import type { CaseProps } from './types';
 import styles from './Case.module.scss';
 
 /**
@@ -14,13 +15,15 @@ import styles from './Case.module.scss';
  * @returns {JSX.Element} возвращает карточку кейса.
  */
 
-export const Case: React.FC<CaseProps> = ({
+const Case: React.FC<CaseProps> = ({
   title,
   description,
   image,
   imageAlt,
   style,
 }) => {
+  const { t } = useTranslation();
+
   return (
     <div className={styles.case}>
       <img
@@ -30,12 +33,14 @@ export const Case: React.FC<CaseProps> = ({
         className={styles['case-image']}
         style={style}
       />
-      <h3 className={styles['case-title']}>{title}</h3>
+      <h3 className={styles['case-title']}>{t(title)}</h3>
       <div className={styles['case-description']}>
         {description.map((paragraph, index) => (
-          <p key={index}>{paragraph}</p>
+          <p key={index}>{t(paragraph)}</p>
         ))}
       </div>
     </div>
   );
 };
+
+export default Case;
