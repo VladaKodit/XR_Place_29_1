@@ -22,38 +22,36 @@ export const Hero: FC = () => {
     });
 
   return (
-    <SectionBase
-      children={
-        <div className={style.container}>
-          <span className={`${style.line} ${style.line1}`} aria-hidden="true" />
-          <span className={`${style.line} ${style.line2}`} aria-hidden="true" />
-          <span className={`${style.line} ${style.line3}`} aria-hidden="true" />
+    <SectionBase>
+      <div className={style.container}>
+        <span className={`${style.line} ${style.line1}`} aria-hidden="true" />
+        <span className={`${style.line} ${style.line2}`} aria-hidden="true" />
+        <span className={`${style.line} ${style.line3}`} aria-hidden="true" />
 
-          <Cross className={style.cross} aria-hidden="true" />
-          <CornerArrow className={style.cornerArrow} aria-hidden="true" />
-          <Square className={style.square} aria-hidden="true" />
-          <Circle className={style.circle} aria-hidden="true" />
+        <Cross className={style.cross} aria-hidden="true" />
+        <CornerArrow className={style.cornerArrow} aria-hidden="true" />
+        <Square className={style.square} aria-hidden="true" />
+        <Circle className={style.circle} aria-hidden="true" />
 
-          <h1 className={style.header}>xr place</h1>
-          <p className={style.subheader} aria-hidden="true">
-            place for business
-          </p>
+        <h1 className={style.header}>xr place</h1>
+        <p className={style.subheader} aria-hidden="true">
+          place for business
+        </p>
 
-          <img className={style.image} src={image} alt="3Д модель" />
+        <img className={style.image} src={image} alt="3Д модель" />
 
-          <p className={style.description}>{t('hero.description.0')}</p>
-          <Button
-            className={style.button}
-            type={'button'}
-            children={t('hero.cta')}
-            Icon={Arrow}
-            onClick={openModal}
-          />
-          <Modal modalHook={modalHook}>
-            <p>Тут должна быть форма</p>
-          </Modal>
-        </div>
-      }
-    />
+        <p className={style.description}>{t('hero.description.0')}</p>
+        <Button
+          className={style.button}
+          type={'button'}
+          children={t('hero.cta')}
+          Icon={Arrow}
+          onClick={openModal}
+        />
+        <Modal modalHook={modalHook}>
+          <p>Тут должна быть форма</p>
+        </Modal>
+      </div>
+    </SectionBase>
   );
 };
