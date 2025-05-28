@@ -1,4 +1,4 @@
-import type { FunctionComponent, SVGProps } from 'react';
+import { type FunctionComponent, type SVGProps } from 'react';
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
