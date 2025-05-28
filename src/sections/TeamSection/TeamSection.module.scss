@@ -1,0 +1,244 @@
+.teamSection {
+  width: 100vw;
+  background-color: #FFF;
+  box-sizing: border-box;
+  padding: 13px 25px 0;
+
+  & .content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 82px 25px 32px;
+    text-align: center;
+  }
+
+  & .content:last-child {
+    gap: 30px;
+  }
+
+  & .text {
+    font-family: Inter, sans-serif;
+    font-size: clamp(16px, calc(1rem + ((1vw - 3.6px) * 0.3012)), 18px);
+    color: #2D2D2D;
+    line-height: 110%;
+    text-align: left;
+    font-weight: 300;
+  }
+
+  & .intro {
+    margin-top: 30px;
+    white-space: pre-line;
+  }
+
+  & .isRowText {
+    margin-bottom: 0;
+  }
+
+  & .finalText {
+    font-size: 18px;
+    white-space: pre-line;
+    margin-top: 10px;
+  }
+
+  & .cardWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  & .grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Стили для чётных карточек (мобильная версия) */
+  & .cardWrapper:nth-of-type(even) > div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 185px;
+    height: 185px;
+    background: url('../../assets/wave-evenM.svg') no-repeat;
+    background-size: contain;
+    z-index: 0;
+  }
+
+  & .cardWrapper:nth-of-type(even) > div::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 7px;
+    width: 41px;
+    height: 41px;
+    background: url('../../assets/dots-evenM.svg') no-repeat;
+    background-size: contain;
+    z-index: 0;
+  }
+
+  /* Стили для нечётных карточек (мобильная версия) */
+  & .cardWrapper:nth-of-type(odd) > div::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    width: 160px;
+    height: 160px;
+    background: url('../../assets/wave-oddM.svg') no-repeat;
+    background-size: contain;
+    z-index: 0;
+  }
+
+  & .cardWrapper:nth-of-type(odd) > div::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    width: 32px;
+    height: 42px;
+    background: url('../../assets/dots-oddM.svg') no-repeat;
+    background-size: contain;
+    z-index: 0;
+  }
+
+  @media (min-width: 1024px) {
+    & {
+      padding: 7vw;
+    }
+
+    & .grid_container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 60px
+    }
+
+    & .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      row-gap: 0;
+      column-gap: 20px;
+      width: 58.3vw;
+      justify-content: center;
+      align-items: centerS;
+    }
+
+    & .cardWrapper[data-index="0"] {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    & .intro {
+      grid-column: 2;
+      grid-row: 1;
+      white-space: normal;
+      max-width: 100%;
+      padding-right: 1px;
+      margin-top: 0;
+      overflow-wrap: break-word;
+    }
+
+    & .isRowText {
+      grid-column: 2;
+      grid-row: 1;
+      margin: 0 0 11px;
+      align-self: end;
+      padding-right: 30px;
+    }
+
+    & .cardWrapper[data-index="1"] {
+      grid-column: 2;
+      grid-row: 2;
+    }
+
+    & .finalText {
+      grid-column: 1;
+      grid-row: 2;
+      margin: 0;
+      align-self: end;
+      text-align: right;
+      overflow-wrap: break-word;
+    }
+
+    & .cardWrapper[data-index]:not([data-index="0"]):not([data-index="1"]) {
+      grid-column: 2;
+      grid-row: auto;
+    }
+
+    & .text {
+      line-height: 120%;
+    }
+
+    /* Стили для чётных карточек. (десктоп) */
+    & .cardWrapper:nth-of-type(even) > div > div {
+      justify-content: end;
+      align-items: end;
+      padding: 10px 20px 0 0;
+      gap: 155px;
+    }
+
+    & .cardWrapper:nth-of-type(even) > div > div > div {
+      text-align: end;
+    }
+
+    & .cardWrapper:nth-of-type(even) > div::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 250px;
+      height: 250px;
+      background: url('../../assets/wave-even.svg') no-repeat;
+      background-size: contain;
+      z-index: 0;
+    }
+
+    & .cardWrapper:nth-of-type(even) > div::after {
+      content: '';
+      position: absolute;
+      bottom: 95px;
+      left: 29px;
+      width: 57px;
+      height: 57px;
+      background: url('../../assets/dots-even.svg') no-repeat;
+      background-size: contain;
+      z-index: 0;
+    }
+
+    /* Стили для нечётных карточек (десктоп) */
+    & .cardWrapper:nth-of-type(odd) > div > div {
+      padding: 18px 0 0 20px;
+      justify-content: end;
+      gap: 148px;
+    }
+
+    & .cardWrapper:nth-of-type(odd) > div > div > div {
+      text-align: start;
+    }
+
+    & .cardWrapper:nth-of-type(odd) > div::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 195px;
+      height: 195px;
+      background: url('../../assets/wave-odd.svg') no-repeat;
+      background-size: contain;
+      z-index: 0;
+    }
+
+    & .cardWrapper:nth-of-type(odd) > div::after {
+      content: '';
+      position: absolute;
+      top: 19px;
+      right: 35px;
+      width: 51px;
+      height: 51px;
+      background: url('../../assets/dots-odd.svg') no-repeat;
+      background-size: contain;
+      z-index: 0;
+    }
+  }
+}

@@ -1,11 +1,5 @@
-import { Hero } from '../sections/Hero/hero';
-
 function App() {
-  return (
-    <div>
-      <Hero />
-    </div>
-  );
+  return <div></div>;
 }
 
 export default App;

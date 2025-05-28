@@ -11,8 +11,8 @@ export const SectionBase = ({
   containerClassName = '',
 }: SectionProps) => {
   return (
-    <div className={`${styles.wrapper} ${containerClassName}`}>
+    <section className={`${styles.wrapper} ${containerClassName}`}>
       <div className={styles.content}>{children}</div>
-    </div>
+    </section>
   );
 };

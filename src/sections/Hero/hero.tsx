@@ -50,7 +50,7 @@ export const Hero: FC = () => {
             onClick={openModal}
           />
           <Modal modalHook={modalHook}>
-            <p>спасибо за ваше доверие</p>
+            <p>Тут должна быть форма</p>
           </Modal>
         </div>
       }
