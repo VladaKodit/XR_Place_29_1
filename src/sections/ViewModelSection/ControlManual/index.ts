@@ -1,0 +1,1 @@
+export { ControlManual } from './ControlManual';

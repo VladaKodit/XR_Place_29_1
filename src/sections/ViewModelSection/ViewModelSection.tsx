@@ -1,8 +1,9 @@
-import { Suspense, lazy, useEffect, useState } from 'react';
+import { Suspense, lazy } from 'react';
 
 import { useBtnClickLoad } from '@hooks';
 import imgViewSection from '@assets/images/imgViewSection.png';
 import styles from './ViewModelSection.module.scss';
+import { ControlManual } from './ControlManual';
 
 const LazyWrapperModelScale = lazy(
   () => import('./WrapperModelScale/WrapperModelScale'),
@@ -13,16 +14,6 @@ const LazyWrapperModelScale = lazy(
  */
 export const ViewModelSection = () => {
   const { isLoading, showScale, handleButtonClick } = useBtnClickLoad();
-  const [showControls, setShowControls] = useState(false);
-
-  useEffect(() => {
-    if (showScale) {
-      const timer = setTimeout(() => setShowControls(true), 300);
-      return () => clearTimeout(timer);
-    } else {
-      setShowControls(false);
-    }
-  }, [showScale]);
 
   return (
     <section
@@ -40,20 +31,7 @@ export const ViewModelSection = () => {
       {showScale && (
         <Suspense>
           <LazyWrapperModelScale />
-
-          {showControls && (
-            <div className={styles['controls-section']}>
-              <div className={styles['controls-info']}>
-                <p>Используйте клавиши WASD для перемещения</p>
-                <div className={styles['controls-keys']}>
-                  <span>W</span>
-                  <span>A</span>
-                  <span>S</span>
-                  <span>D</span>
-                </div>
-              </div>
-            </div>
-          )}
+          <ControlManual />
         </Suspense>
       )}
     </section>

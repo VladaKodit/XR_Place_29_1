@@ -4,7 +4,7 @@ import {
   isCameraInside,
   transparentWallMaterial,
   transparentRoofMaterial,
-} from '../../sections/ViewModelSection';
+} from '@sections';
 import type { Mesh } from 'three';
 
 export const useTransparencyControl = (

@@ -1,1 +1,1 @@
-export { ViewModelSection } from './ViewModelSection';
+export * from './ViewModelSection';
