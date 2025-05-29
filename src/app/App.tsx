@@ -1,5 +1,11 @@
+import { Header } from '../sections/header';
+
 function App() {
-  return <div></div>;
+  return (
+    <div>
+      <Header />
+    </div>
+  );
 }
 
 export default App;
