@@ -96,7 +96,7 @@
     ]
   },
   "howItWorksIntro": {
-    "title": "How It Works",
+    "title": ["How", "It", "Works"],
     "link": "Discover how it works",
     "description": [
       "Our interactive solutions help your clients make smarter real estate decisions.",
