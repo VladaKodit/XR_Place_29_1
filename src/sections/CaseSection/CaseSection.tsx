@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { SectionBase } from '../../components/SectionBase/SectionBase';
 import { LabeledTitle } from '../../components/LabeledTitle';
@@ -23,47 +24,50 @@ import airplane from '../../assets/images/CaseSection/picture-airplane.png';
  */
 
 export const CaseSection: React.FC = () => {
-  const sectionTitle = {
-    text: 'Реализованные проекты',
-    tag: 'Сотрудничество',
-    highlights: ['проекты'],
-  };
+  const { t } = useTranslation();
 
   const mockCases: CaseProps[] = [
     {
-      image: northport,
-      title: 'северный порт',
-      description: ['real estate agency'],
-      imageAlt: 'Северный порт',
+      image: emaar,
+      title: t('projectsSection.projects.0.title'),
+      description: [t('projectsSection.projects.0.description')],
+      imageAlt: t('projectsSection.projects.0.title') + ' проект',
     },
     {
       image: mira,
-      title: 'mira',
-      description: ['real estate agency'],
-      imageAlt: 'Mira project',
-    },
-    {
-      image: emaar,
-      title: 'emaar',
-      description: ['real estate agency'],
-      imageAlt: 'Emaar project',
+      title: t('projectsSection.projects.1.title'),
+      description: [t('projectsSection.projects.1.description')],
+      imageAlt: t('projectsSection.projects.1.title') + ' проект',
     },
     {
       image: airplane,
-      title: 'самолеты',
-      description: ['real estate agency'],
-      imageAlt: 'Airplane project',
+      title: t('projectsSection.projects.2.title'),
+      description: [t('projectsSection.projects.2.description')],
+      imageAlt: t('projectsSection.projects.2.title') + ' проект',
+    },
+    {
+      image: northport,
+      title: t('projectsSection.projects.3.title'),
+      description: [t('projectsSection.projects.3.description')],
+      imageAlt: t('projectsSection.projects.3.title') + ' проект',
     },
   ];
 
   return (
     <SectionBase>
-      <LabeledTitle {...sectionTitle} />
+      <LabeledTitle
+        tag={t('projectsSection.label')}
+        text={t('projectsSection.title')}
+        highlights={
+          t('projectsSection.highlights', { returnObjects: true }) as string[]
+        }
+      />
       <CaseList
         cases={mockCases}
         onSeeMoreClick={() => {
           console.log('Переход к списку всех проектов');
         }}
+        seeAllText={t('projectsSection.seeAll')}
       />
     </SectionBase>
   );

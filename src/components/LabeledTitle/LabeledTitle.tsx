@@ -1,5 +1,4 @@
 import { type FC, Fragment } from 'react';
-import { useTranslation } from 'react-i18next';
 import { escapeRegExp } from './helpers';
 import type { LabeledTitleProps } from './type';
 import styles from './LabeledTitle.module.scss';
@@ -9,7 +8,6 @@ export const LabeledTitle: FC<LabeledTitleProps> = ({
   highlights = [],
   tag,
 }) => {
-  const { t } = useTranslation();
   const escapedHighlights = highlights.map(escapeRegExp);
   const regex =
     escapedHighlights.length > 0
@@ -17,12 +15,13 @@ export const LabeledTitle: FC<LabeledTitleProps> = ({
       : null;
 
   const parts = regex ? text.split(regex) : [text];
+
   const isEmptyTag = !tag;
 
   return (
     <div className={styles.container}>
       <span className={`${styles.tag} ${isEmptyTag ? styles.tagEmpty : ''}`}>
-        {tag ? t(tag) : '\u00A0'}
+        {tag || '\u00A0'}
       </span>
       <h2 className={styles.title}>
         {parts.map((part, index) =>
@@ -33,7 +32,7 @@ export const LabeledTitle: FC<LabeledTitleProps> = ({
               {part}
             </span>
           ) : (
-            <Fragment key={index}>{t(part)}</Fragment>
+            <Fragment key={index}>{part}</Fragment>
           ),
         )}
       </h2>

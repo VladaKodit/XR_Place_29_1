@@ -18,7 +18,11 @@ import RightArrow from '../../assets/svg/arrow-right.svg?react';
  * @returns {JSX.Element} Элемент секцию с кейсами.
  */
 
-const CaseList: React.FC<CaseListProps> = ({ cases, onSeeMoreClick }) => {
+const CaseList: React.FC<CaseListProps> = ({
+  cases,
+  onSeeMoreClick,
+  seeAllText,
+}) => {
   //логика отображения
   const isCarousel = cases.length > 1 && cases.length < 4;
   const isGrid = cases.length >= 4;
@@ -95,7 +99,7 @@ const CaseList: React.FC<CaseListProps> = ({ cases, onSeeMoreClick }) => {
               className={styles['case-list__link']}
               onClick={onSeeMoreClick}
             >
-              <span>Смотреть все проекты</span>
+              <span>{seeAllText}</span>
               <ArrowIcon className={styles['case-list__link-icon']} />
             </a>
           )}

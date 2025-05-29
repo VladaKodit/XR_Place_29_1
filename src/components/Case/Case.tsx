@@ -1,5 +1,4 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 import type { CaseProps } from './types';
 import styles from './Case.module.scss';
 
@@ -22,8 +21,6 @@ const Case: React.FC<CaseProps> = ({
   imageAlt,
   style,
 }) => {
-  const { t } = useTranslation();
-
   return (
     <div className={styles.case}>
       <img
@@ -33,10 +30,10 @@ const Case: React.FC<CaseProps> = ({
         className={styles['case-image']}
         style={style}
       />
-      <h3 className={styles['case-title']}>{t(title)}</h3>
+      <h3 className={styles['case-title']}>{title}</h3>
       <div className={styles['case-description']}>
         {description.map((paragraph, index) => (
-          <p key={index}>{t(paragraph)}</p>
+          <p key={index}>{paragraph}</p>
         ))}
       </div>
     </div>

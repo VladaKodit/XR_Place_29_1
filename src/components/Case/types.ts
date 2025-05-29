@@ -8,5 +8,6 @@ export type CaseProps = {
 
 export type CaseListProps = {
   cases: CaseProps[]; // массив карточек
-  onSeeMoreClick?: () => void; // для ссылки
+  onSeeMoreClick?: () => void; //  обработчик клика по ссылке
+  seeAllText?: string; //текст для ссылки
 };

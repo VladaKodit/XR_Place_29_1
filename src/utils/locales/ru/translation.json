@@ -84,14 +84,24 @@
   "projectsSection": {
     "label": "Сотрудничество",
     "title": "Реализованные проекты",
+    "highlights": ["проекты"],
+    "seeAll": "Смотреть все проекты",
     "projects": [
       {
-        "title": "Северный порт",
+        "title": "emaar",
         "description": "Агентство недвижимости"
       },
       {
-        "title": "MIRA",
-        "description": "Real estate agency"
+        "title": "mira",
+        "description": "Агентство недвижимости"
+      },
+      {
+        "title": "самолет",
+        "description": "Агентство недвижимости"
+      },
+      {
+        "title": "северный порт",
+        "description": "Агентство недвижимости"
       }
     ]
   },
