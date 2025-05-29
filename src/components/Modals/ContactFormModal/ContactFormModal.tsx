@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import type { ContactFormModalProps } from './type';
 import { useTranslation } from 'react-i18next';
-import { Button } from '../../button';
+import { Button } from '../../Button';
 import { CheckboxInput, Input } from '../../Input';
 import style from './ContactFormModal.module.scss';
 import Arrow from '../../../assets/images/arrow.svg?react';

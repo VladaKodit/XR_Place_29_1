@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import type { SuccessModalProps } from './type';
 import { useTranslation } from 'react-i18next';
-import { Button } from '../../button';
+import { Button } from '../../Button';
 import style from './SuccessModal.module.scss';
 import Arrow from '../../../assets/images/arrow.svg?react';
 import CheckIcon from '../../../assets/images/checkIcon.svg?react';
