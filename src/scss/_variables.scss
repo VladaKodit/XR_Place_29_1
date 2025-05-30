@@ -10,17 +10,19 @@ $primary-font-family: 'Helvetica', system-ui, -apple-system, 'Segoe UI', roboto,
 
 $decoration-font-family: "Gotham", "Open Sans", "Roboto", !default;
 
+//font-weight
 $font-weight-light: 300;
+$font-weight-regular: 400;
 
-$font-size-micro: 10px;
-$font-size-min: 16px;
-$font-size-regular: 18px;
-$font-size-average: 20px;
-$font-size-title: 64px;
+// font-size
+$font-size-micro: 0.625rem;      // 10px
+$font-size-min: 1rem;            // 16px
+$font-size-regular: 1.125rem;    // 18px
+$font-size-average: 1.25rem;     // 20px
+$font-size-large: 2.5rem;        // 40px
+$font-size-title: 4rem;          // 64px
 
 $font-color-base: rgba(77, 77, 77, 1);
-$font-color-title: #202021;
-$color-highlight: #055042;
 $gray-light: #C6C6C6;
 $gray-medium: #B0B0B0;
 $gray-dark: #444444;
@@ -43,4 +45,25 @@ $modal-title-font-color: rgba(45, 45, 45, 1);
 
 
 
+// case
+$case-border-radius: 20px;
+$case-border-color: #C3C3C3CC;
+$case-text-color: #4D4D4D;
+$case-text-descrption-color: #2D2D2D;
+$case-link-color:#4D4D4D;
+$arrow-disabled-color: #c3c3c3cc;
+$case-list-margin-top: 60px;
+$carousel-padding: 100px;
+$carousel-gap: 30px;
+$grid-columns: 2;
+$grid-template-columns: repeat($grid-columns, 1fr);
+$grid-gap: 20px;
+$grid-row-gap: 55px;
 
+
+// labeledTitle
+$color-highlight: #055042;
+$labeledTitle-grid-column: 320px 1fr;
+$labeledTitle-padding-tag: 7px 16px;
+$labeledTitle-title-windth: 700px;
+$font-color-title: #202021;
