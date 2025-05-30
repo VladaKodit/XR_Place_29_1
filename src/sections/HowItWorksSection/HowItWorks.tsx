@@ -7,8 +7,10 @@ import ArrowIcon from '../../assets/arrow.svg?react';
 import { useModal } from '../../hooks/Modal/useModal';
 
 export const HowItWorks = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isRu = i18n.language === 'ru';
   const modalHook = useModal();
+
   const openModal = () =>
     modalHook.openModal(() => {
       console.log('модалка исчезла с экрана');
@@ -23,7 +25,7 @@ export const HowItWorks = () => {
           {t('howItWorksIntro.title.0')}
         </h2>
         <h2
-          className={`${styles.howItWorks__title} ${styles[`howItWorks__title--spacing-2`]}`}
+          className={`${styles.howItWorks__title} ${styles[`howItWorks__title--spacing-2`]} ${isRu ? styles[`howItWorks__title--spacing-2-ru`] : styles[`howItWorks__title--spacing-2-en`]}`}
         >
           {t('howItWorksIntro.title.1')}
         </h2>
@@ -33,7 +35,9 @@ export const HowItWorks = () => {
           {t('howItWorksIntro.title.2')}
         </h2>
 
-        <span className={styles.howItWorks__decor}>
+        <span
+          className={`${styles[`howItWorks__decor`]} ${isRu ? styles[`howItWorks__decor-ru`] : styles[`howItWorks__decor-en`]}`}
+        >
           <Circles aria-hidden="true" />
         </span>
         <span className={styles.howItWorks__decor_line} aria-hidden="true" />

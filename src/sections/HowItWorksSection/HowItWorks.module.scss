@@ -52,8 +52,15 @@
 
     &--spacing-2 {
       grid-row: 1;
-      grid-column: 7 / 13;
       letter-spacing: 0.5rem;
+
+      &-ru {
+        grid-column: 7 / 13;
+      }
+
+      &-en {
+        grid-column: 8 / 13;
+      }
     }
 
     &--spacing-3 {
@@ -65,9 +72,16 @@
 
   &__decor {
     grid-row: 1 / 1;
-    grid-column: 5 / 6;
     align-self: center;
     justify-self: end;
+
+    &-ru {
+      grid-column: 5 / 6;
+    }
+
+    &-en {
+      grid-column: 6 / 7;
+    }
   }
 
   &__decor_line {
