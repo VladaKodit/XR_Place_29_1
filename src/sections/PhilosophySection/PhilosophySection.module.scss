@@ -1,0 +1,93 @@
+/*
+  Эта секция целиком и полностью на абсолютном позиционировании,
+  потому выбор пал поставить минимальную длину секции, а дальше,
+  для адаптивной верстки задавать ее кейфреймами.
+*/
+
+@use '@scss/variables' as *;
+
+.philosophy-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  width: 100%;
+  padding: 13.7vh 0 2.78vh;
+  box-sizing: border-box;
+
+  &-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-image: url('../../assets/images/philosophy/dots.png');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  &__content-upper {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 230px;
+  }
+
+  &__description {
+    color: var(--Text-Primary-Grey, #5E5E5D);
+    max-width: 398px;
+    font-family: $font-family;
+    font-size: $font-size-regular;
+    font-weight: $font-weight-light;
+    line-height: 120%;
+  }
+
+  &__slogan-upper {
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    font-family: $font-family;
+    font-size: 34px;
+    font-weight: $font-weight-light;
+    line-height: 120%;
+    position: absolute;
+    left: 400px;
+    letter-spacing: -2.72px;
+    top: 170px;
+    min-width: 80%;
+    max-width: 100%;
+  }
+  &__slogan-lower {
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    font-family: $font-family;
+    font-size: 34px;
+    font-weight: $font-weight-light;
+    line-height: 120%;
+    letter-spacing: -2.72px;
+    top: 170px;
+
+    &-span-0 {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      padding-left: 19vw
+    }
+    &-span-1 {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      padding-left: 37.5vw
+    }
+  }
+  .dots-image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}

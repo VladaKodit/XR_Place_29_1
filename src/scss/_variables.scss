@@ -8,6 +8,8 @@ $primary-font-family: 'Helvetica', system-ui, -apple-system, 'Segoe UI', roboto,
 	'Helvetica Neue', arial, 'Noto Sans', 'Liberation Sans', sans-serif,
 	'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !default;
 
+$decoration-font-family: "Gotham", "Open Sans", "Roboto", !default;
+
 //font-weight
 $font-weight-light: 300;
 $font-weight-regular: 400;
@@ -21,6 +23,9 @@ $font-size-large: 2.5rem;        // 40px
 $font-size-title: 4rem;          // 64px
 
 $font-color-base: rgba(77, 77, 77, 1);
+$gray-light: #C6C6C6;
+$gray-medium: #B0B0B0;
+$gray-dark: #444444;
 
 // transition
 $transition-default: 0.5s ease-in-out;
@@ -30,6 +35,15 @@ $input-border-radius: 40px;
 $input-bg-color: rgba(241, 244, 247, 1);
 $input-font-color: #000;
 $bg-input-font-color: rgba(195, 195, 195, 0.8);
+
+$bg-main-color: #fff;
+// modal
+$font-weight-modal-title: 400;
+$font-weight-modal-description: 400;
+$font-size-modal-title: 36px;
+$modal-title-font-color: rgba(45, 45, 45, 1);
+
+
 
 // case
 $case-border-radius: 20px;

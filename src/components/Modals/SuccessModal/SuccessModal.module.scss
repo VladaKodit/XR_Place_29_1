@@ -1,0 +1,46 @@
+@use '@scss/variables' as *;
+@use '@scss/mixins' as *;
+
+.successModal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.75rem;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1.875rem;
+}
+
+.paragraphs {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 0.875rem;
+}
+
+.button {
+  margin-top: 1.5625rem;
+}
+
+.title {
+  color: $modal-title-font-color;
+  font-family: $font-family;
+  font-weight: $font-weight-modal-title;
+  font-size: $font-size-modal-title;
+  line-height: 100%;
+  letter-spacing: -6%;
+  text-transform: uppercase;
+}
+
+.description {
+  color: $font-color-base;
+  font-family: $font-family;
+  font-weight: $font-weight-modal-description;
+  font-size: $font-size-average;
+  line-height: 110.00000000000001%;
+  letter-spacing: -2%;
+}
