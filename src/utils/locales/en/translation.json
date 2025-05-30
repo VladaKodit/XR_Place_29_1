@@ -180,7 +180,8 @@
       "telegram": "Telegram",
       "email": "Email",
       "name": "Your name",
-      "checkbox": "I agree to the Privacy Policy",
+      "agreement": "I agree to",
+      "policy": "the Privacy Policy",
       "submit": "Submit"
     }
   },
