@@ -14,9 +14,10 @@ import { useTranslation } from 'react-i18next';
 interface HeaderProps {
   navItems?: NavItemProps[];
   navBarType?: NavBarType;
+  className?: string;
 }
 
-export const Header = ({ navBarType = 'top' }: HeaderProps) => {
+export const Header = ({ navBarType = 'top', className }: HeaderProps) => {
   const { t } = useTranslation();
 
   const navItems = [
@@ -26,17 +27,15 @@ export const Header = ({ navBarType = 'top' }: HeaderProps) => {
   ];
 
   return (
-    <SectionBase>
-      {
-        <div className={styles.header}>
-          <Frame style={{ paddingRight: '387px' }} />
-          <Navbar navItems={navItems} navBarType={navBarType} />
-          <div className={styles.header_lang}>
-            <Ellipse />
-            <LanguageSwitcher />
-          </div>
+    <SectionBase containerClassName={className}>
+      <div className={styles.header}>
+        <Frame className={styles.frame} />
+        <Navbar navItems={navItems} navBarType={navBarType} />
+        <div className={styles.header_lang}>
+          <Ellipse />
+          <LanguageSwitcher />
         </div>
-      }
+      </div>
     </SectionBase>
   );
 };

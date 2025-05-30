@@ -2,11 +2,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  min-width: 100%;
 }
 
 .header_lang {
   display: flex;
   gap: 21px;
-  padding-left: 129px;
+  padding-left: 8em;
+}
+
+.frame {
+  padding-right: 24em;
 }
