@@ -123,6 +123,7 @@
   },
   "faqSection": {
     "label": "FAQ",
+    "highlights": "Questions",
     "title": "Questions for Our Team",
     "items": [
       {

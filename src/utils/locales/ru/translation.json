@@ -123,6 +123,7 @@
   },
   "faqSection": {
     "label": "Вопросы",
+    "highlights": "Вопросы",
     "title": "Вопросы нашей команде",
     "items": [
       {

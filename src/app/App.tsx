@@ -1,5 +1,11 @@
+import { FAQSection } from '../sections/FAQSection';
+
 function App() {
-  return <div></div>;
+  return (
+    <div>
+      <FAQSection />
+    </div>
+  );
 }
 
 export default App;
