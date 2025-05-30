@@ -8,7 +8,7 @@ import type { CaseProps } from '../../components/Case/types.ts';
 
 import mira from '../../assets/images/CaseSection/picture-mira.png';
 import emaar from '../../assets/images/CaseSection/picture-emaar.png';
-import northport from '../../assets/images/CaseSection/picture-northport.png';
+//import northport from '../../assets/images/CaseSection/picture-northport.png';
 import airplane from '../../assets/images/CaseSection/picture-airplane.png';
 
 /**
@@ -45,12 +45,12 @@ export const CaseSection: React.FC = () => {
       description: [t('projectsSection.projects.2.description')],
       imageAlt: t('projectsSection.projects.2.title') + ' проект',
     },
-    {
-      image: northport,
-      title: t('projectsSection.projects.3.title'),
-      description: [t('projectsSection.projects.3.description')],
-      imageAlt: t('projectsSection.projects.3.title') + ' проект',
-    },
+    //{
+    //image: northport,
+    // title: t('projectsSection.projects.3.title'),
+    // description: [t('projectsSection.projects.3.description')],
+    // imageAlt: t('projectsSection.projects.3.title') + ' проект',
+    //},
   ];
 
   return (

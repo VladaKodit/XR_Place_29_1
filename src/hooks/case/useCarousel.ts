@@ -1,80 +1,77 @@
 /**
- * Кастомный React-хук для управления каруселью слайдов
- **/
+ * Кастомный React-хук для управления горизонтальной каруселью слайдов.
+ *
+ * Логика прокрутки реализована через нативные методы и свойства DOM-элемента:
+ * - Прокрутка осуществляется с помощью `scrollBy`, который плавно сдвигает контейнер по горизонтали на ширину одного слайда с учётом отступа.
+ * - Текущее положение отслеживается через событие `scroll`, используя свойство `scrollLeft` для определения смещения прокрутки.
+ * - Индекс активного слайда вычисляется, округляя текущее смещение к ближайшему шагу (ширина слайда + отступ).
+ *
+ * Это позволяет синхронизировать состояние с визуальным положением карусели, а также реализовать управление с помощью кнопок "вперед" и "назад".
+ *
+ * @param {number} length - Количество слайдов в карусели.
+ * @returns {{
+ *   carouselRef: React.RefObject<HTMLDivElement>, // Ссылка на контейнер карусели для манипуляций скроллом
+ *   currentIndex: number,                         // Текущий индекс активного слайда
+ *   scrollNext: () => void,                       // Функция прокрутки к следующему слайду
+ *   scrollPrev: () => void,                       // Функция прокрутки к предыдущему слайду
+ *   isAtStart: boolean,                           // Флаг — находится ли карусель на первом слайде
+ *   isAtEnd: boolean                              // Флаг — находится ли карусель на последнем слайде
+ * }}
+ */
 
-import { useState, useRef, useEffect } from 'react';
-import { gsap } from 'gsap';
+import { useRef, useState, useEffect, useCallback } from 'react';
 
+const SLIDE_WIDTH = 930;
 const GAP = 30;
-const PADDING = 100;
+const STEP = SLIDE_WIDTH + GAP;
 
 export function useCarousel(length: number) {
-  // Текущий индекс активного слайда
+  const carouselRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const carouselRef = useRef<HTMLDivElement>(null);
+  // Скролл к следующему слайду
+  const scrollNext = () => {
+    if (!carouselRef.current) return;
+    carouselRef.current.scrollBy({ left: STEP, behavior: 'smooth' });
+  };
 
-  useEffect(() => {
+  // Скролл к предыдущему слайду
+  const scrollPrev = () => {
+    if (!carouselRef.current) return;
+    carouselRef.current.scrollBy({ left: -STEP, behavior: 'smooth' });
+  };
+
+  // Обработка scroll-события для отслеживания текущего слайда
+  const handleScroll = useCallback(() => {
     if (!carouselRef.current) return;
 
-    // Ширина видимой области (родителя карусели)
-    const containerWidth = carouselRef.current.parentElement?.offsetWidth || 0;
+    // Получает количество пикселей, на которое контейнер прокручен
+    const scrollLeft = carouselRef.current.scrollLeft;
 
-    // Фикс ширина одного слайда
-    const slideWidth = 930;
+    // Определяем индекс слайда по текущему скроллу
+    const index = Math.round(scrollLeft / STEP);
+    setCurrentIndex(index);
+  }, []);
 
-    // Общая ширина всех слайдов с учетом gap между ними и padding по краям
-    const totalSlidesWidth =
-      length * slideWidth + (length - 1) * GAP + PADDING * 2;
+  useEffect(() => {
+    const ref = carouselRef.current;
+    if (!ref) return;
 
-    // Максимальный сдвиг, чтобы последний слайд не ушел за пределы контейнера
-    const maxTranslateX = Math.max(totalSlidesWidth - containerWidth, 0);
+    ref.addEventListener('scroll', handleScroll, { passive: true });
 
-    // сдвиг
-    const targetX = currentIndex * (slideWidth + GAP);
+    return () => {
+      ref.removeEventListener('scroll', handleScroll);
+    };
+  }, [handleScroll]);
 
-    // Ограничиваем сдвиг максимальным значением, чтобы не было пустого пространства
-    const translateX = Math.min(targetX, maxTranslateX);
-
-    console.log({
-      currentIndex,
-      slideWidth,
-      totalSlidesWidth,
-      containerWidth,
-      maxTranslateX,
-      targetX,
-      translateX,
-    });
-
-    // Анимация сдвига карусели с помощью GSAP
-    gsap.to(carouselRef.current, {
-      x: `-${translateX}px`,
-      duration: 0.5,
-      ease: 'power2.out',
-    });
-  }, [currentIndex, length]);
-
-  // Функция перехода к предыдущему слайду
-  const prevSlide = () => {
-    console.log('prevSlide', currentIndex);
-    if (currentIndex > 0) setCurrentIndex(currentIndex - 1);
-  };
-
-  // Функция перехода к следующему слайду
-  const nextSlide = () => {
-    console.log('nextSlide', currentIndex);
-    if (currentIndex < length - 1) setCurrentIndex(currentIndex + 1);
-  };
-
-  // Флаги, чтобы знать, когда карусель в начале или в конце
   const isAtStart = currentIndex === 0;
   const isAtEnd = currentIndex === length - 1;
 
   return {
-    currentIndex,
     carouselRef,
-    prevSlide,
-    nextSlide,
+    currentIndex,
+    scrollNext,
+    scrollPrev,
     isAtStart,
     isAtEnd,
   };

@@ -30,8 +30,8 @@ const CaseList: React.FC<CaseListProps> = ({
   const {
     currentIndex,
     carouselRef,
-    prevSlide,
-    nextSlide,
+    scrollNext,
+    scrollPrev,
     isAtStart,
     isAtEnd,
   } = useCarousel(cases.length);
@@ -49,7 +49,7 @@ const CaseList: React.FC<CaseListProps> = ({
                   ${styles['case-list__button']} 
                   ${isAtStart ? styles.disabled : ''}
                 `}
-              onClick={prevSlide}
+              onClick={scrollPrev}
               aria-label="Предыдущий слайд"
               disabled={isAtStart}
             >
@@ -62,7 +62,7 @@ const CaseList: React.FC<CaseListProps> = ({
                   ${styles['case-list__button']} 
                   ${isAtEnd ? styles.disabled : ''}
                 `}
-              onClick={nextSlide}
+              onClick={scrollNext}
               aria-label="Следующий слайд"
               disabled={isAtEnd}
             >

@@ -64,15 +64,23 @@
   &__carousel-inner {
     display: flex;
     gap: $carousel-gap;
-    will-change: transform;
     scroll-behavior: smooth;
     padding-left: $carousel-padding;
     padding-right: $carousel-padding;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; // Firefox
+    -ms-overflow-style: none; // IE
+  
+    &::-webkit-scrollbar {
+      display: none; // Chrome, Safari
+    }
   }
 
   &__carousel-item {
     flex: 0 0 auto;
     width: 930px;
+    scroll-snap-align: center;
 
     &:last-child {
       margin-right: 0;
