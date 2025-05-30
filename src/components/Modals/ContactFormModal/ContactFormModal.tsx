@@ -18,15 +18,20 @@ export const ContactFormModal: FC<ContactFormModalProps> = ({
   return (
     <div className={style.contactFormModal}>
       {/* Крестик - кнопка закрытия модального окна */}
-      <button type="button" className={style.close} onClick={onClose}>
+      <button
+        type="button"
+        className={style.close}
+        aria-label="Закрыть модальное окно"
+        onClick={onClose}
+      >
         <CloseIcon />
       </button>
 
       {/* Заголовок модального окна */}
-      <h5 className={style.title} children={t('ctaModal.title')} />
+      <h5 className={style.title}>{t('ctaModal.title')}</h5>
 
       {/* Текст модального окна */}
-      <p className={style.description} children={t('ctaModal.description.0')} />
+      <p className={style.description}>{t('ctaModal.description.0')}</p>
 
       {/* Форма */}
       <form
@@ -91,12 +96,9 @@ export const ContactFormModal: FC<ContactFormModalProps> = ({
         </div>
 
         {/* Кнопка отправки формы */}
-        <Button
-          type={'submit'}
-          className={style.button}
-          children={t('ctaModal.form.submit')}
-          Icon={Arrow}
-        />
+        <Button type={'submit'} className={style.button} Icon={Arrow}>
+          {t('ctaModal.form.submit')}
+        </Button>
       </form>
     </div>
   );

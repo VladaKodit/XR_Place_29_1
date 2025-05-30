@@ -17,18 +17,16 @@ export const SuccessModal: FC<SuccessModalProps> = ({ onGoToHomeClick }) => {
 
       <div className={style.heading}>
         {/* Заголовок модального окна */}
-        <h5 className={style.title} children={t('feedbackModal.title')} />
+        <h5 className={style.title}>{t('feedbackModal.title')}</h5>
 
         {/* Текст модального окна */}
         <div className={style.paragraphs}>
-          <p
-            className={style.description}
-            children={t('feedbackModal.description.0')}
-          />
-          <p
-            className={style.description}
-            children={t('feedbackModal.description.1')}
-          />
+          <p className={style.description}>
+            {t('feedbackModal.description.0')}
+          </p>
+          <p className={style.description}>
+            {t('feedbackModal.description.1')}
+          </p>
         </div>
       </div>
 
@@ -36,10 +34,11 @@ export const SuccessModal: FC<SuccessModalProps> = ({ onGoToHomeClick }) => {
       <Button
         className={style.button}
         type={'button'}
-        children={t('feedbackModal.button')}
         Icon={Arrow}
         onClick={onGoToHomeClick}
-      />
+      >
+        {t('feedbackModal.button')}
+      </Button>
     </div>
   );
 };
