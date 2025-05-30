@@ -3,7 +3,8 @@
 $modal-border-radius: 30px;
 $modal-bg-color: white;
 $translate: translate(-50%, -50%);
-$max-width: 644px;
+$max-width: 40.25rem;
+$min-width: 20rem;
 
 .modal {
   position: fixed;
@@ -11,9 +12,10 @@ $max-width: 644px;
   left: 50%;
   z-index: 9999;
   max-width: $max-width;
+  min-width: $min-width;
   margin: auto;
   border-radius: $modal-border-radius;
-  padding: 60px 40px;
+  padding: 3.75rem 2.5rem;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   background: $modal-bg-color;
   transition: all $transition-default;

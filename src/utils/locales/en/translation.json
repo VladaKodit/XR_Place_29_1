@@ -12,11 +12,18 @@
   },
   "philosophySection": {
     "label": "Our Philosophy",
-    "title": "A Trusted Partner in Your Business Success",
+    "title": "Partner in Your Business Success",
+    "highlights": ["Success"],
     "description": [
       "We offer a unique widget for creating virtual tours that allow your clients to explore real estate in an interactive format."
     ],
-    "slogan": "Transform how you showcase real estate with immersive 3D virtual tours"
+    "slogan": [
+      "Feel the transform",
+      "feelings you showcase real estate",
+      "with immersive virtial",
+      "3D tours"
+    ],
+    "imageAlt": "3D model image"
   },
   "widgetSection": {
     "label": "Widget",
@@ -96,7 +103,7 @@
     ]
   },
   "howItWorksIntro": {
-    "title": "How It Works",
+    "title": ["How", "It", "Works"],
     "link": "Discover how it works",
     "description": [
       "Our interactive solutions help your clients make smarter real estate decisions.",
@@ -173,7 +180,8 @@
       "telegram": "Telegram",
       "email": "Email",
       "name": "Your name",
-      "checkbox": "I agree to the Privacy Policy",
+      "agreement": "I agree to",
+      "policy": "the Privacy Policy",
       "submit": "Submit"
     }
   },
