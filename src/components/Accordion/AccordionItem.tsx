@@ -1,16 +1,15 @@
-import { useState } from 'react';
 import type { AccordionProps } from './type';
 import styles from './Accordion.module.scss';
 
-export const AccordionItem = ({ title, content }: AccordionProps) => {
-  const [isOpen, setIsOpen] = useState(false);
-
+export const AccordionItem = ({
+  title,
+  content,
+  isOpen,
+  onToggle,
+}: AccordionProps) => {
   return (
     <li className={styles['accordion__item']}>
-      <button
-        className={styles['accordion__button']}
-        onClick={() => setIsOpen(!isOpen)}
-      >
+      <button className={styles['accordion__button']} onClick={onToggle}>
         <span
           className={`${styles['accordion__title']} ${
             isOpen ? styles['accordion__title--up'] : ''
