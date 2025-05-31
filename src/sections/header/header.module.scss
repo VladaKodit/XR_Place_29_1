@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 100%;
+}
+
+.header_lang {
+  display: flex;
+  gap: 21px;
+  padding-left: 8em;
+}
+
+.frame {
+  padding-right: 24em;
+}
