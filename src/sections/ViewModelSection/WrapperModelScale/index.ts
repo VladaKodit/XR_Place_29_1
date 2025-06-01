@@ -1,0 +1,1 @@
+export { WrapperModelScale } from './WrapperModelScale';

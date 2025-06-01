@@ -1,0 +1,1 @@
+export { CameraAnimator } from './CameraAnimator';

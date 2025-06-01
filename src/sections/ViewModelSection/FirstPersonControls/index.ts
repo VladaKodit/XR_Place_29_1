@@ -1,0 +1,1 @@
+export { FirstPersonControls } from './FirstPersonControls';
