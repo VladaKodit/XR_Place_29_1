@@ -12,11 +12,18 @@
   },
   "philosophySection": {
     "label": "Our Philosophy",
-    "title": "A Trusted Partner in Your Business Success",
+    "title": "Partner in Your Business Success",
+    "highlights": ["Success"],
     "description": [
       "We offer a unique widget for creating virtual tours that allow your clients to explore real estate in an interactive format."
     ],
-    "slogan": "Transform how you showcase real estate with immersive 3D virtual tours"
+    "slogan": [
+      "Feel the transform",
+      "feelings you showcase real estate",
+      "with immersive virtial",
+      "3D tours"
+    ],
+    "imageAlt": "3D model image"
   },
   "widgetSection": {
     "label": "Widget",
@@ -82,21 +89,31 @@
     ]
   },
   "projectsSection": {
-    "label": "Partnership",
-    "title": "Featured Projects",
+    "label": "Collaboration",
+    "title": "Completed Projects",
+    "highlights": ["projects"],
+    "seeAll": "See all projects",
     "projects": [
       {
-        "title": "Northern Port",
+        "title": "emaar",
         "description": "Real estate agency"
       },
       {
-        "title": "MIRA",
+        "title": "mira",
+        "description": "Real estate agency"
+      },
+      {
+        "title": "airplane",
+        "description": "Real estate agency"
+      },
+      {
+        "title": "north port",
         "description": "Real estate agency"
       }
     ]
   },
   "howItWorksIntro": {
-    "title": "How It Works",
+    "title": ["How", "It", "Works"],
     "link": "Discover how it works",
     "description": [
       "Our interactive solutions help your clients make smarter real estate decisions.",
@@ -123,6 +140,7 @@
   },
   "faqSection": {
     "label": "FAQ",
+    "highlights": "Questions",
     "title": "Questions for Our Team",
     "items": [
       {
@@ -173,7 +191,8 @@
       "telegram": "Telegram",
       "email": "Email",
       "name": "Your name",
-      "checkbox": "I agree to the Privacy Policy",
+      "agreement": "I agree to",
+      "policy": "the Privacy Policy",
       "submit": "Submit"
     }
   },

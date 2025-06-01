@@ -1,8 +1,3 @@
-// @import url(../../fonts/index.scss);
-// @import url(../../css/variables.scss);
-// @import url(../../css/visually-hidden.scss);
-// @import url(../../css/normalizer.scss);
-
 @use '@scss/variables.scss' as *;
 
 body {
@@ -14,6 +9,7 @@ body {
   border-radius: 8px;
   font-family: $primary-font-family;
   color: #191919;
+  margin-top: 2.5rem;
 
   &__item {
     border-top: 1px solid #a3a3a3;
@@ -35,7 +31,7 @@ body {
 
   &__title {
     font-size: $font-size-average;
-    transition: transform 0.5s ease;  
+    transition: transform 0.5s ease;
     text-transform: uppercase;
 
     &--up {
@@ -100,5 +96,8 @@ body {
   &__content--open {
     max-height: 18.75rem;
     opacity: 1;
+    transition:
+      max-height 0.5s ease,
+      opacity 0s;
   }
 }

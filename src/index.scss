@@ -1,13 +1,13 @@
 @use './scss';
 
 :root {
-  background-color: #242424;
+  background-color: $bg-main-color;
+  display: flex;
+  justify-content: center;
 }
 
 body {
   display: flex;
   justify-content: center;
   align-items: center;
-  inline-size: 100vw;
-  block-size: 100vh;
 }
