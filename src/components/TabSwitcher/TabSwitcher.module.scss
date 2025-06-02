@@ -4,64 +4,75 @@ $tab-markers-bg: rgba(135, 135, 135, 0.8);
 $tab-markers-active-bg: rgba(5, 80, 66, 1);
 $tab-button-color: rgba(45, 45, 45, 1);
 $tab-button-active-color: rgba(5, 80, 66, 1);
+
 $tab-button-font-weight-active: 400;
 $card-index-font-weight: 500;
-
 $tab-button-font-size: 2.125rem;
 $tab-button-font-size-active: 2.375rem;
-
 $letter-spacing-common: -0.08em;
-
 $card-description-letter-spacing: -0.03em;
-
 $card-description-font-size: $font-size-min;
 
-$tab-vertical-markers-height: 230px;
 $marker-height-default: 1px;
 $marker-width-default: 26px;
 $marker-active-height: 1.2px;
 $marker-active-width: 51px;
 
-$card-image-width: 400px;
-$card-image-height: 266px;
-
 $card-gap: 1.25rem;
+$tab-buttons-gap: 0.813rem;
+$tab-item-gap: 0.5rem;
+$tab-item-padding-left: 0.063rem;
+$card-padding-top: 0.4rem;
+$card-description-padding-right: 1.9rem;
+$card-container-width: 25rem;
+
+$tabs-container-columns: "1 / 13";
+$tab-buttons-columns: "1 / 9";
+$tab-button-inner-columns: "2 / 9";
+$card-container-columns: "9 / 13";
+$marker-column: "1 / 2";
+
+$grid-12-columns: repeat(12, 1fr);
+$grid-8-columns: repeat(8, 1fr);
+
+$transition-transform: transform 0.5s ease;
 
 .tabsContainer {
+  grid-column: #{$tabs-container-columns};
   display: grid;
-  grid-template-columns: 0.063rem auto 25rem;
-  max-width: 77.5rem;
-  width: 100%;
+  grid-template-columns: $grid-12-columns;
   align-items: start;
 }
 
 .tabMarkersVerticalLine {
+  position: absolute;
   display: inline-block;
-  height: $tab-vertical-markers-height;
   width: 1px;
+  height: 0;
   background-color: $tab-markers-bg;
   transition: $transition-default;
 }
 
 .tabButtons {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.813rem;
+  display: grid;
+  grid-column: #{$tab-buttons-columns};
+  gap: $tab-buttons-gap;
 }
 
 .tabItem {
+  opacity: 0;
   display: grid;
-  grid-template-columns: 3.1875rem 1fr;
+  grid-template-columns: $grid-8-columns;
   align-items: center;
-  gap: 0.5rem;
-  padding-left: 0.063rem;
+  gap: $tab-item-gap;
+  padding-left: $tab-item-padding-left;
 }
 
 .marker {
   position: relative;
   left: -1px;
   display: inline-block;
+  grid-column: #{$marker-column};
   height: $marker-height-default;
   width: $marker-width-default;
   background-color: $tab-markers-bg;
@@ -76,22 +87,23 @@ $card-gap: 1.25rem;
 }
 
 .tabButton {
+  grid-column: #{$tab-button-inner-columns};
   text-transform: uppercase;
   font-family: $font-family;
   font-weight: $font-weight-light;
+  font-size: $tab-button-font-size;
   letter-spacing: $letter-spacing-common;
   line-height: 1;
-  font-size: $tab-button-font-size;
+  color: $tab-button-color;
   background: none;
   border: none;
   padding: 0;
   margin: 0;
   cursor: pointer;
-  color: $tab-button-color;
   text-align: left;
-  transform: scale(1);
   transform-origin: left center;
-  transition: transform 0.5s ease;
+  transform: scale(1);
+  transition: $transition-transform;
 }
 
 .tabButtonActive {
@@ -102,27 +114,28 @@ $card-gap: 1.25rem;
 }
 
 .cardContainer {
+  grid-column: #{$card-container-columns};
   justify-self: end;
-  padding-top: 0.4rem;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  padding-top: $card-padding-top;
   gap: $card-gap;
+  max-width: $card-container-width;
 }
 
 .cardImage {
   display: block;
+  width: 100%;
   object-fit: cover;
   object-position: center;
-  width: $card-image-width;
-  height: $card-image-height;
 }
 
 .cardContent {
-  font-family: $font-family;
-  font-weight: $font-weight-light;
   display: flex;
   gap: $card-gap;
+  font-family: $font-family;
+  font-weight: $font-weight-light;
 }
 
 .cardIndex {
@@ -135,7 +148,7 @@ $card-gap: 1.25rem;
 .cardDescription {
   font-size: $card-description-font-size;
   letter-spacing: $card-description-letter-spacing;
+  padding-right: $card-description-padding-right;
   text-align: left;
-  padding-right: 1.9rem;
   line-height: 1.25;
 }
