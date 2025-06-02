@@ -13,10 +13,10 @@ gsap.registerPlugin(ScrollTrigger);
 // Время можно быстро корректировать
 
 const ANIMATION_CONFIG = {
-  titleDuration: 0.2,
-  itemDuration: 0.15,
-  itemStagger: 0.1,
-  backToTopDuration: 0.2,
+  titleDuration: 0.5,
+  itemDuration: 0.4,
+  itemStagger: 0.05,
+  backToTopDuration: 0.5,
   logoDuration: 2.0,
   easing: 'power3.out',
 };
@@ -38,32 +38,6 @@ export const Footer = () => {
   ];
 
   useEffect(() => {
-    console.log(
-      'Titles:',
-      document.querySelectorAll(`.${styles.section__title}`),
-    );
-    console.log(
-      'Menu items:',
-      document.querySelectorAll(
-        `.${styles.menu} .${navbarStyles.navItemBottom}`,
-      ),
-    );
-    console.log(
-      'Social items:',
-      document.querySelectorAll(
-        `.${styles.social} .${navbarStyles.navItemBottom}`,
-      ),
-    );
-    console.log(
-      'Address items:',
-      document.querySelectorAll(`.${styles.address} p`),
-    );
-    console.log('Copyright:', document.querySelector(`.${styles.copyright}`));
-    console.log(
-      'Back to Top:',
-      document.querySelector(`.${styles.backToTop__link}`),
-    );
-
     // Начальное состояние для всех анимируемых элементов
     gsap.set(
       [
@@ -143,7 +117,7 @@ export const Footer = () => {
     animationSteps.forEach((selectors) => {
       tl.fromTo(
         selectors,
-        { autoAlpha: 0, y: '100%' },
+        { autoAlpha: 0, y: '200%' },
         {
           autoAlpha: 1,
           y: '0%',
