@@ -3,6 +3,7 @@ export * from './Navbar';
 export * from './LabeledTitle';
 export * from './Button';
 export * from './CooperationCard';
-export * from './Modal';
+export * from './Modal/';
 export * from './ModalOverlay';
 export * from './TabSwitcher';
+export * from './CustomMouse';
