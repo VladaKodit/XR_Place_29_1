@@ -5,33 +5,42 @@ $container-min-height: 942px;
 
 $padding-top-header: 138px;
 
-$padding-left-text-block: 19.75rem;
-$text-block-max-width: 45rem;
-$text-block-gap: 1.25rem;
-$text-block-padding-top: 1.25rem;
-$text-block-margin-bottom: 2.5rem;
-
+$text-block-margin-bottom: 1.25rem;
 $text-block-width-clamp: clamp(20rem, calc(25vw + 7.5rem), 25.05rem);
 
 $line-gradient: linear-gradient(90deg, #055042 0%, #0BB696 100%);
 $line-z-index: 1;
+
+$grid-columns-12: repeat(12, 1fr);
+$gap-default: 1.25rem;
+
+$grid-column-full: "1 / 13";
+$grid-column-text-block: "4 / 11";
 
 .container {
   width: $container-width;
   min-height: $container-min-height;
 }
 
+.myGridWrapper {
+  display: grid;
+  gap: $gap-default;
+  grid-template-columns: $grid-columns-12;
+  grid-auto-rows: auto;
+}
+
 .containerHeaderBlock {
+  grid-column: #{$grid-column-full};
+  grid-row: 1;
   padding-top: $padding-top-header;
 }
 
 .containerTextBlock {
+  grid-column: #{$grid-column-text-block};
+  grid-row: 2;
   display: flex;
   flex-direction: column;
-  padding-left: $padding-left-text-block;
-  max-width: $text-block-max-width;
-  gap: $text-block-gap;
-  padding-top: $text-block-padding-top;
+  gap: $gap-default;
   margin-bottom: $text-block-margin-bottom;
 }
 
@@ -48,8 +57,8 @@ $line-z-index: 1;
 
 .textBlockRightSide {
   @extend .textBlock;
-  align-self: flex-end;
   max-width: 23rem;
+  margin-left: auto;
 }
 
 .sectionWithLines {
@@ -60,9 +69,9 @@ $line-z-index: 1;
 .topLine,
 .rightLine,
 .lineDot {
+  position: absolute;
   background: $line-gradient;
   z-index: $line-z-index;
-  position: absolute;
 }
 
 .leftLine {
@@ -89,8 +98,8 @@ $line-z-index: 1;
 .lineDot {
   bottom: 0;
   left: 50%;
-  transform: translateX(-50%);
   width: 6px;
   height: 6px;
   border-radius: 50%;
+  transform: translateX(-50%);
 }
