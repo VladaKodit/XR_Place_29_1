@@ -17,7 +17,7 @@ export const HowItWorks = () => {
     });
 
   return (
-    <SectionBase>
+    <SectionBase containerClassName={styles['paddings-reset']}>
       <div className={styles.howItWorks}>
         <h2
           className={`${styles.howItWorks__title} ${styles[`howItWorks__title--spacing-1`]}`}

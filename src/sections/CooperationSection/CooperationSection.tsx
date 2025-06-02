@@ -45,7 +45,7 @@ export const CooperationSection = () => {
   }));
 
   return (
-    <SectionBase>
+    <SectionBase containerClassName={styles['custom-paddings']}>
       {
         <>
           <LabeledTitle text={text} highlights={[highlights]} tag={tag} />
