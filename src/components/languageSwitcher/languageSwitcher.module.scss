@@ -4,6 +4,8 @@ $switch-button-color: rgba(135, 135, 135, 0.8);
 
 /* Основной блок */
 .language-switcher {
+  position: relative;
+  z-index: 10;
   display: flex;
   align-items: center;
   gap: 8px;
