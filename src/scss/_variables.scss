@@ -26,9 +26,23 @@ $font-color-base: rgba(77, 77, 77, 1);
 $gray-light: #C6C6C6;
 $gray-medium: #B0B0B0;
 $gray-dark: #444444;
+$color-bg-dark: #191919;
+$color-white: #fff;
+$color-text-secondary: #959595;
+$color-black: #000;
+$color-primary: #0BB696;
+$color-primary-dark-10: #098971;  // На 10% темнее primary
+$color-primary-dark-20: #066856;  // На 20% темнее primary 
+$color-primary-dark-25: #055042;  // На 25% темнее primary
+
 
 // transition
 $transition-default: 0.5s ease-in-out;
+
+// duration
+$anim-duration-title: 0.4s;
+$anim-duration-decor: 0.6s;
+$anim-duration-fade: 0.9s;
 
 // input
 $input-border-radius: 40px;

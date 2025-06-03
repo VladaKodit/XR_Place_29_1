@@ -22,23 +22,33 @@ export const HowItWorks = () => {
         <h2
           className={`${styles.howItWorks__title} ${styles[`howItWorks__title--spacing-1`]}`}
         >
-          {t('howItWorksIntro.title.0')}
+          <span className={styles.anim_title}>
+            {' '}
+            {t('howItWorksIntro.title.0')}
+          </span>
         </h2>
         <h2
           className={`${styles.howItWorks__title} ${styles[`howItWorks__title--spacing-2`]} ${isRu ? styles[`howItWorks__title--spacing-2-ru`] : styles[`howItWorks__title--spacing-2-en`]}`}
         >
-          {t('howItWorksIntro.title.1')}
+          <span className={styles.anim_title}>
+            {' '}
+            {t('howItWorksIntro.title.1')}{' '}
+          </span>
         </h2>
         <h2
           className={`${styles.howItWorks__title} ${styles[`howItWorks__title--spacing-3`]}`}
         >
-          {t('howItWorksIntro.title.2')}
+          <span className={styles.anim_title}>
+            {t('howItWorksIntro.title.2')}
+          </span>
         </h2>
 
         <span
           className={`${styles[`howItWorks__decor`]} ${isRu ? styles[`howItWorks__decor-ru`] : styles[`howItWorks__decor-en`]}`}
         >
-          <Circles aria-hidden="true" />
+          <span className={styles.anim_decor}>
+            <Circles aria-hidden="true" />
+          </span>
         </span>
         <span className={styles.howItWorks__decor_line} aria-hidden="true" />
 
@@ -69,7 +79,7 @@ export const HowItWorks = () => {
         </Button>
       </div>
       <Modal modalHook={modalHook}>
-        <p>Тут былл Денис</p>
+        <p>Тут был Денис</p>
       </Modal>
     </SectionBase>
   );
