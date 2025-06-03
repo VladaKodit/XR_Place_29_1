@@ -1,6 +1,8 @@
 @use '@scss/variables' as *;
 
 .howItWorks {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
   display: grid;
   grid-template-rows: 12.5rem 12.8125rem 3.4375rem 2.5rem 5.3125rem 5.625rem 8.125rem;
   grid-template-columns: 1.5625rem 12.1875rem 13.125rem 3.4375rem 15.625rem 5.3125rem 2.8125rem 13.125rem 10.625rem 4.6875rem;
@@ -20,11 +22,13 @@
     height: 39.375rem;
     border: 0.0625rem solid transparent;
     border-radius: 50%;
-    background: radial-gradient(50% 50% at 50% 50%,
-        #0BB696 0%,
-        #098971 33%,
-        #066856 69%,
-        #055042 92.7%);
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      #0BB696 0%,
+      #098971 33%,
+      #066856 69%,
+      #055042 92.7%
+    );
   }
 
   &::after {
@@ -163,5 +167,7 @@
 .paddings-reset {
   padding-left: 0;
   padding-right: 0;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  box-sizing: border-box;
 }
-

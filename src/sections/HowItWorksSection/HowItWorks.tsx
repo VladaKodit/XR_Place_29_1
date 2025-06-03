@@ -8,7 +8,11 @@ import { useModal } from '../../hooks/Modal/useModal';
 import type { ContactFormData } from '../../components/Modals/ContactFormModal/type';
 import { useState } from 'react';
 
-export const HowItWorks = () => {
+type HowItWorksProps = {
+  id?: string;
+};
+
+export const HowItWorks = ({ id }: HowItWorksProps) => {
   const { t, i18n } = useTranslation();
   const isRu = i18n.language === 'ru';
   const modalHook = useModal();
@@ -32,7 +36,7 @@ export const HowItWorks = () => {
   const openModal = () => modalHook.openModal(() => console.log());
 
   return (
-    <SectionBase containerClassName={styles['paddings-reset']}>
+    <SectionBase id={id} containerClassName={styles['paddings-reset']}>
       <div className={styles.howItWorks}>
         <h2
           className={`${styles.howItWorks__title} ${styles[`howItWorks__title--spacing-1`]}`}
