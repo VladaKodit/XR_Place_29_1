@@ -7,7 +7,11 @@ export const CheckboxInput = ({
 }: CheckboxInputProps) => {
   return (
     <div className={styles['checkbox-input']}>
-      <input type="checkbox" className={styles['checkbox-input__body']} />
+      <input
+        type="checkbox"
+        className={styles['checkbox-input__body']}
+        required
+      />
       <p className={styles['checkbox-input__description']}>
         {description}{' '}
         <a href={`${textLink.url}`} className={styles['checkbox-input__link']}>

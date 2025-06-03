@@ -1,7 +1,7 @@
-import type { TContactFormHook } from '@types';
+// import type { TContactFormHook } from '@types';
 
 // Интерфейс для формы
-interface ContactFormData {
+export interface ContactFormData {
   phone: string;
   tg: string;
   email: string;
@@ -12,5 +12,4 @@ interface ContactFormData {
 export interface ContactFormModalProps {
   onSubmit: (formData: ContactFormData) => void;
   onClose: () => void;
-  contactFormHook: TContactFormHook;
 }

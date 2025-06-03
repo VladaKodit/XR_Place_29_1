@@ -1,20 +1,35 @@
 import { SectionBase } from '../../components/SectionBase/SectionBase';
 import styles from './HowItWorks.module.scss';
 import Circles from '../../assets/images/HowItWorks/element.svg?react';
-import { Button, Modal } from '@components';
+import { Button, ContactFormModal, Modal, SuccessModal } from '@components';
 import { useTranslation } from 'react-i18next';
 import ArrowIcon from '../../assets/arrow.svg?react';
 import { useModal } from '../../hooks/Modal/useModal';
+import type { ContactFormData } from '../../components/Modals/ContactFormModal/type';
+import { useState } from 'react';
 
 export const HowItWorks = () => {
   const { t, i18n } = useTranslation();
   const isRu = i18n.language === 'ru';
   const modalHook = useModal();
 
-  const openModal = () =>
-    modalHook.openModal(() => {
-      console.log('модалка исчезла с экрана');
-    });
+  const [showSuccessModal, setShowSuccessModal] = useState<boolean>(false);
+
+  const handleFormSubmit = async (formData: ContactFormData) => {
+    try {
+      console.log('отправка удалась', formData);
+      setShowSuccessModal(true);
+    } catch (error) {
+      console.error('Ошибка при отправке формы:', error);
+      throw error;
+    }
+  };
+
+  const handleGoToHome = () => {
+    modalHook.closeModal();
+  };
+
+  const openModal = () => modalHook.openModal(() => console.log());
 
   return (
     <SectionBase containerClassName={styles['paddings-reset']}>
@@ -69,7 +84,14 @@ export const HowItWorks = () => {
         </Button>
       </div>
       <Modal modalHook={modalHook}>
-        <p>Тут былл Денис</p>
+        {showSuccessModal ? (
+          <SuccessModal onGoToHomeClick={handleGoToHome}></SuccessModal>
+        ) : (
+          <ContactFormModal
+            onSubmit={handleFormSubmit}
+            onClose={modalHook.closeModal}
+          ></ContactFormModal>
+        )}
       </Modal>
     </SectionBase>
   );
