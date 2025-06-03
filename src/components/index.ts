@@ -7,3 +7,5 @@ export * from './Modal/';
 export * from './ModalOverlay';
 export * from './TabSwitcher';
 export * from './CustomMouse';
+export * from './Modals/ContactFormModal';
+export * from './Modals/SuccessModal';

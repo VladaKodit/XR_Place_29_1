@@ -4,7 +4,11 @@ import { LabeledTitle } from '@components';
 import styles from './PhilosophySection.module.scss';
 import philosophyImage from '../../assets/images/philosophy/philosophyImage.png';
 
-export const PhilosophySection = () => {
+type PhilosophySectionProps = {
+  id?: string;
+};
+
+export const PhilosophySection = ({ id }: PhilosophySectionProps) => {
   const { t } = useTranslation();
 
   const sectionTag = t('philosophySection.label');
@@ -24,7 +28,7 @@ export const PhilosophySection = () => {
   const lowerSlogan = sloganLines.slice(2);
 
   return (
-    <SectionBase>
+    <SectionBase id={id}>
       <div className={styles['philosophy-section']}>
         <div className={styles['philosophy-section-wrapper']}>
           <LabeledTitle

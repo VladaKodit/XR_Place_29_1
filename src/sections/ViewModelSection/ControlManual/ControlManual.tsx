@@ -6,9 +6,13 @@ import styles from './ControlManual.module.scss';
  */
 export const ControlManual = () => (
   <>
+    <div className={styles['text-help']}>
+      ТО ЧТО ВЫ ВИДЕТЕ ЭТО ЧЕРНОВОЙ ВАРИАНТ, ЕСЛИ У ВАС ЗАВИСАЕТ ПЕРЕЗАГРЗУИТЕ
+      СТРАНИЦУ. ЕСЛИ ОСТАНЕТЬСЯ ВРЕМЯ ВСТАВЛЮ ОПТИМИЗИРОВАННУЮ МОДЕЛЬ
+    </div>
     <div className={styles['control-manual']}>
       <div className={styles['control-manual__description']}>
-        <p>Используйте клавиши WASD для перемещения</p>
+        <p>Используйте клавиши WASD для перемещения (ESC для выхода)</p>
         <div className={styles['control-manual__controls-keys']}>
           <span className={styles['control-manual__char']}>W</span>
           <span className={styles['control-manual__char']}>A</span>
