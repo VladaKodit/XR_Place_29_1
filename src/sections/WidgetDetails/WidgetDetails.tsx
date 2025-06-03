@@ -27,7 +27,11 @@ const DecorativeLines = () => (
   </>
 );
 
-const WidgetDetails = () => {
+type WidgetDetailsProps = {
+  id?: string;
+};
+
+const WidgetDetails = ({ id }: WidgetDetailsProps) => {
   const { t } = useTranslation();
   const tabsData = useMemo(() => buildFeaturesTabData(t), [t]);
 
@@ -83,7 +87,7 @@ const WidgetDetails = () => {
   return (
     <div className={styles.sectionWithLines}>
       <DecorativeLines />
-      <SectionBase containerClassName={styles.container}>
+      <SectionBase id={id} containerClassName={styles.container}>
         <div className={styles.myGridWrapper}>
           <div className={styles.containerHeaderBlock} ref={titleRef}>
             <LabeledTitle

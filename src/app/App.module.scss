@@ -1,8 +1,18 @@
-.wrapper {
+.app {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  justify-items: center;
   max-width: 1440px;
+}
+
+.stickyHeader {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background-color: #fff;
+}
+
+.high-priority {
+  z-index: 9999;
 }

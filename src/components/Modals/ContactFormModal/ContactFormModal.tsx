@@ -1,5 +1,5 @@
-import type { FC } from 'react';
-import type { ContactFormModalProps } from './type';
+import { useState, type FC } from 'react';
+import type { ContactFormData, ContactFormModalProps } from './type';
 import { useTranslation } from 'react-i18next';
 import { Button } from '../../Button';
 import { CheckboxInput, Input } from '../../Input';
@@ -11,13 +11,52 @@ import CloseIcon from '../../../assets/images/closeIcon.svg?react';
 export const ContactFormModal: FC<ContactFormModalProps> = ({
   onSubmit,
   onClose,
-  contactFormHook,
 }) => {
   const { t } = useTranslation();
+  const [formData, setFormData] = useState<ContactFormData>({
+    phone: '',
+    tg: '',
+    email: '',
+    name: '',
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError(null);
+    setIsSubmitting(true);
+
+    try {
+      if (!formData.phone || !formData.email || !formData.name) {
+        throw new Error('Please fill all required fields');
+      }
+
+      await onSubmit(formData);
+
+      setFormData({
+        phone: '',
+        tg: '',
+        email: '',
+        name: '',
+      });
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Submission failed');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className={style.contactFormModal}>
-      {/* Крестик - кнопка закрытия модального окна */}
       <button
         type="button"
         className={style.close}
@@ -27,67 +66,44 @@ export const ContactFormModal: FC<ContactFormModalProps> = ({
         <CloseIcon />
       </button>
 
-      {/* Заголовок модального окна */}
       <h5 className={style.title}>{t('ctaModal.title')}</h5>
-
-      {/* Текст модального окна */}
       <p className={style.description}>{t('ctaModal.description.0')}</p>
 
-      {/* Форма */}
-      <form
-        onSubmit={() => {
-          // Вызываем колбэк отправки с данными формы
-          onSubmit({
-            phone: contactFormHook.phone,
-            tg: contactFormHook.tg,
-            email: contactFormHook.email,
-            name: contactFormHook.name,
-          });
-        }}
-        className={style.form}
-      >
+      {error && <div className={style.error}>{error}</div>}
+
+      <form onSubmit={handleSubmit} className={style.form}>
         <div className={style.firstLine}>
-          {/* Поле ввода телефона (обязательное) */}
           <Input
             required
+            name="phone"
             type="phone"
-            value={contactFormHook.phone}
-            onChange={(e) => {
-              contactFormHook.setPhone(e.target.value);
-            }}
+            value={formData.phone}
+            onChange={handleChange}
           />
-
-          {/* Поле ввода Telegram (необязательное, тк у клиента может не быть tg) */}
           <Input
+            name="tg"
             type="tg"
-            value={contactFormHook.tg}
-            onChange={(e) => {
-              contactFormHook.setTg(e.target.value);
-            }}
+            value={formData.tg}
+            onChange={handleChange}
           />
         </div>
 
-        {/* Поле ввода email (обязательное) */}
         <Input
           required
+          name="email"
           type="email"
-          value={contactFormHook.email}
-          onChange={(e) => {
-            contactFormHook.setEmail(e.target.value);
-          }}
+          value={formData.email}
+          onChange={handleChange}
         />
 
-        {/* Поле ввода имени (обязательное) */}
         <Input
           required
+          name="name"
           type="name"
-          value={contactFormHook.name}
-          onChange={(e) => {
-            contactFormHook.setName(e.target.value);
-          }}
+          value={formData.name}
+          onChange={handleChange}
         />
 
-        {/* Чекбокс согласия с политикой */}
         <div className={style.checkbox}>
           <CheckboxInput
             description={t('ctaModal.form.agreement')}
@@ -95,9 +111,15 @@ export const ContactFormModal: FC<ContactFormModalProps> = ({
           />
         </div>
 
-        {/* Кнопка отправки формы */}
-        <Button type={'submit'} className={style.button} Icon={Arrow}>
-          {t('ctaModal.form.submit')}
+        <Button
+          type="submit"
+          className={style.button}
+          Icon={Arrow}
+          disabled={isSubmitting}
+        >
+          {isSubmitting
+            ? t('ctaModal.form.submitting')
+            : t('ctaModal.form.submit')}
         </Button>
       </form>
     </div>

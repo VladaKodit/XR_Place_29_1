@@ -2,6 +2,7 @@ import { LabeledTitle } from '@components';
 import { useTranslation } from 'react-i18next';
 import { AccordionList } from '../../components/Accordion';
 import { SectionBase } from '../../components/SectionBase/SectionBase';
+import styles from './FAQSection.module.scss';
 
 interface faqItems {
   question: string;
@@ -20,7 +21,7 @@ export const FAQSection = () => {
   }) as faqItems[];
 
   return (
-    <SectionBase>
+    <SectionBase containerClassName={styles['padding-custom']}>
       {
         <>
           <LabeledTitle text={title} highlights={[highlights]} tag={tag} />

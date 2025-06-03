@@ -21,9 +21,9 @@ export const Header = ({ navBarType = 'top', className }: HeaderProps) => {
   const { t } = useTranslation();
 
   const navItems = [
-    { href: '#', label: t('navbar.about') },
-    { href: '#', label: t('navbar.howItWorks') },
-    { href: '#', label: t('navbar.features') },
+    { href: '#philosophy', label: t('navbar.about') },
+    { href: '#howItWorks', label: t('navbar.howItWorks') },
+    { href: '#features', label: t('navbar.features') },
   ];
 
   return (
