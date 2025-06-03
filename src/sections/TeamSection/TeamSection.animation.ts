@@ -2,7 +2,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 /**
- * Функция анимации секции команды с использованием GSAP и ScrollTrigger.
+ * Используется GSAP и ScrollTrigger.
  * Анимация запускается при прокрутке секции в область видимости.
  *
  * @param sectionRef - ссылка на контейнер секции
