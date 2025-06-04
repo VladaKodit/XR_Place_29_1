@@ -1,4 +1,3 @@
-import { HowItWorks } from '../sections/HowItWorksSection/HowItWorks';
 import { useEffect, useRef, useState } from 'react';
 import {
   CaseSection,

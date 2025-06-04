@@ -1,9 +1,20 @@
 @use '@scss/variables' as *;
 
-.howItWorks {
+.paddings-reset {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-bg-dark;
+  padding-left: 0;
+  padding-right: 0;
   width: 100vw;
   margin-left: calc(50% - 50vw);
+  box-sizing: border-box;
+}
+
+.howItWorks {
   display: grid;
+  justify-content: center;
   grid-template-rows: 12.5rem 12.8125rem 3.4375rem 2.5rem 5.3125rem 5.625rem 8.125rem;
   grid-template-columns:
     1.5625rem 12.1875rem 13.125rem 3.4375rem 15.625rem 5.3125rem 2.8125rem 13.125rem 10.625rem 4.6875rem;
@@ -11,14 +22,14 @@
   height: 60.8125rem;
   padding: 5.4375rem 1.6875rem 0 5.25rem;
   box-sizing: border-box;
-  background-color: $color-bg-dark;
-  overflow: hidden;
 
   &::before {
-    content: '';
+    grid-row: 1;
+    grid-column: 1;
+    content: "";
     position: absolute;
-    top: 8.125rem;
-    left: -15.3125rem;
+    top: 3rem;
+    left: -21rem;
     width: 39.375rem;
     height: 39.375rem;
     border-radius: 50%;
@@ -60,17 +71,17 @@
       letter-spacing: 0.5rem;
 
       &-ru {
-        grid-column: 7 / 13;
+        grid-column: 7 / 11;
       }
 
       &-en {
-        grid-column: 8 / 13;
+        grid-column: 8 / 11;
       }
     }
 
     &--spacing-3 {
       grid-row: 2/3;
-      grid-column: 1/13;
+      grid-column: 1/11;
       letter-spacing: 0.9375rem;
     }
   }
@@ -96,8 +107,9 @@
     position: relative;
     grid-row: 4;
     grid-column: 3 / 11;
-    width: 100%;
+    width: 66rem;
     height: 0.0625rem;
+    margin-left: 3rem;
     background: linear-gradient(90deg, $color-primary-dark-25 0%, $color-primary 100%);
     transform: scale(0);
     animation: expandHorizontal $transition-default forwards $anim-duration-decor;
@@ -116,7 +128,7 @@
 
   &__link {
     grid-row: 3;
-    grid-column: 9 / 13;
+    grid-column: 9 / 11;
     justify-self: center;
     align-self: center;
     font-family: $font-family;
@@ -235,12 +247,4 @@
   to {
     opacity: 1;
   }
-}
-
-.paddings-reset {
-  padding-left: 0;
-  padding-right: 0;
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  box-sizing: border-box;
 }
