@@ -6,4 +6,5 @@ export type TСooperationCardProps = {
   value: string;
   description: string;
   classCard: string;
+  delay: number;
 };
