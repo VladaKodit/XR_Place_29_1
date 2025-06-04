@@ -1,6 +1,8 @@
 @use '@scss/variables' as *;
 
 .howItWorks {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
   display: grid;
   grid-template-rows: 12.5rem 12.8125rem 3.4375rem 2.5rem 5.3125rem 5.625rem 8.125rem;
   grid-template-columns:
@@ -21,12 +23,10 @@
     height: 39.375rem;
     border-radius: 50%;
     background: radial-gradient(50% 50% at 50% 50%,
-        $color-primary 0%,
-        $color-primary-dark-10 33%,
-        $color-primary-dark-20 69%,
-        $color-primary-dark-25 92.7%);
-    transform: scale(0);
-    animation: scaleUp $transition-default forwards $anim-duration-title;
+        #0BB696 0%,
+        #098971 33%,
+        #066856 69%,
+        #055042 92.7%);
   }
 
   &::after {
@@ -235,4 +235,12 @@
   to {
     opacity: 1;
   }
+}
+
+.paddings-reset {
+  padding-left: 0;
+  padding-right: 0;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  box-sizing: border-box;
 }

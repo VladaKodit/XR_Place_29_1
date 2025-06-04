@@ -46,3 +46,15 @@
     transform: translateY(0);
   }
 }
+
+.text-help {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  inline-size: 100%;
+  font-size: 20px;
+  color: white;
+  font-family: $font-family;
+  mix-blend-mode: difference;
+}

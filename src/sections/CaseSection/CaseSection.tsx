@@ -10,6 +10,7 @@ import mira from '../../assets/images/CaseSection/picture-mira.png';
 import emaar from '../../assets/images/CaseSection/picture-emaar.png';
 //import northport from '../../assets/images/CaseSection/picture-northport.png';
 import airplane from '../../assets/images/CaseSection/picture-airplane.png';
+import styles from './CaseSection.module.scss';
 
 /**
  * Компонент секции с кейсами.
@@ -54,7 +55,7 @@ export const CaseSection: React.FC = () => {
   ];
 
   return (
-    <SectionBase>
+    <SectionBase containerClassName={styles['custom-paddings']}>
       <LabeledTitle
         tag={t('projectsSection.label')}
         text={t('projectsSection.title')}

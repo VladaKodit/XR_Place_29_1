@@ -33,7 +33,7 @@ export const INPUT_CONFIGS: Record<AbstractInputType, InputData> = {
     prefixInput: null,
   },
   tg: {
-    typeInput: 'url',
+    typeInput: 'text',
     prefixInput: 'https://t.me/',
   },
   email: {
