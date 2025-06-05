@@ -10,6 +10,8 @@ import Ellipse from '../../assets/images/Ellipse497.svg?react';
 import { LanguageSwitcher } from '../../components/languageSwitcher/languageSwitcher';
 import { SectionBase } from '../../components/SectionBase/SectionBase';
 import { useTranslation } from 'react-i18next';
+import { useEffect, useRef } from 'react';
+import { animateHeader } from './HeaderAnimation';
 
 interface HeaderProps {
   navItems?: NavItemProps[];
@@ -20,6 +22,16 @@ interface HeaderProps {
 export const Header = ({ navBarType = 'top', className }: HeaderProps) => {
   const { t } = useTranslation();
 
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Анимация запускается при монтировании компонента
+  useEffect(() => {
+    if (containerRef.current) {
+      requestAnimationFrame(() => {
+        animateHeader(containerRef.current!);
+      });
+    }
+  }, []);
   const navItems = [
     { href: '#philosophy', label: t('navbar.about') },
     { href: '#howItWorks', label: t('navbar.howItWorks') },
@@ -28,10 +40,10 @@ export const Header = ({ navBarType = 'top', className }: HeaderProps) => {
 
   return (
     <SectionBase containerClassName={className}>
-      <div className={styles.header}>
-        <Frame className={styles.frame} />
+      <div ref={containerRef} className={styles.header}>
+        <Frame className={`${styles.frame} frame`} />
         <Navbar navItems={navItems} navBarType={navBarType} />
-        <div className={styles.header_lang}>
+        <div className={`${styles.header_lang} header_lang`}>
           <Ellipse />
           <LanguageSwitcher />
         </div>

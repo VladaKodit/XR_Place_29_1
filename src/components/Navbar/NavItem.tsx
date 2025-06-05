@@ -8,7 +8,12 @@ const NavItem = ({ href, label, navBarType }: NavItemProps) => {
     navBarType === 'top' ? styles.navItemTop : styles.navItemBottom;
 
   return (
-    <a className={navItemStyle} href={href} role="link" aria-label={t(label)}>
+    <a
+      className={`${navItemStyle} menu-item`}
+      href={href}
+      role="link"
+      aria-label={t(label)}
+    >
       {t(label)}
     </a>
   );
