@@ -1,5 +1,29 @@
 @use '@scss/variables' as *;
 
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: #171717;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  pointer-events: all;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 0.3s ease;
+}
+
 .container {
   display: grid;
   grid-template-columns: 0.7rem 4.2rem 20.15rem 3.35rem 11.65rem;
@@ -55,8 +79,8 @@
 
 .cross {
   grid-area: 4 / 5 / auto / auto;
-  margin-top: -1.2rem;
-  margin-left: -1rem;
+  margin-top: -1.5rem;
+  margin-left: -1.4rem;
 }
 
 .square {
