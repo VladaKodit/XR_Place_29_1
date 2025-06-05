@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { type TСooperationCardProps } from './type';
 import styles from './CooperationCard.module.scss';
+import { cooperationCardAnimation } from './cooperationCardAnimation';
 
 export const CooperationCard = ({
   title,
@@ -8,8 +9,14 @@ export const CooperationCard = ({
   value,
   description,
   classCard,
+  delay,
 }: TСooperationCardProps) => {
   const [showInfo, setShowInfo] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    cooperationCardAnimation(cardRef, delay);
+  }, [delay]);
 
   // Переключатель состояния, чтобы при клике содержимое карточки можно было менять
   const handleClick = () => {
@@ -18,7 +25,11 @@ export const CooperationCard = ({
 
   return (
     <>
-      <div className={`${styles.card} ${classCard}`} onClick={handleClick}>
+      <div
+        className={`${styles.card} ${classCard}`}
+        onClick={handleClick}
+        ref={cardRef}
+      >
         {!showInfo ? (
           <>
             <h3 className={styles.card__title}>{title}</h3>

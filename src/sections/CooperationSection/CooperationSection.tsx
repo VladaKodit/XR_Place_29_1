@@ -1,10 +1,11 @@
-// import React from 'react'
+import { useRef, useEffect } from 'react';
 import { CooperationCard } from '@components';
 import { SectionBase } from '../../components/SectionBase/SectionBase';
 import { LabeledTitle } from '@components';
 import { useTranslation } from 'react-i18next';
 import styles from './CooperationSection.module.scss';
 import type { TСooperationCardProps } from '../../components/CooperationCard/type';
+import { cooperationSectionAnimation } from './cooperationSectionAnimation';
 
 import IconDefault1 from '../../assets/images/cooperationImage1.svg?react';
 import IconDefault2 from '../../assets/images/cooperationImage2.svg?react';
@@ -44,30 +45,42 @@ export const CooperationSection = () => {
     icon: iconArray[index],
   }));
 
+  // Присваиваем константам DOM для анимации
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLDivElement>(null);
+  const descriptionRef = useRef<HTMLDivElement>(null);
+
+  // Проигрываем анимацию при достижении секции
+
+  useEffect(() => {
+    cooperationSectionAnimation(sectionRef, titleRef, descriptionRef);
+  }, []);
+
   return (
-    <SectionBase containerClassName={styles['custom-paddings']}>
-      {
-        <>
+    <div ref={sectionRef}>
+      <SectionBase containerClassName={styles['custom-paddings']}>
+        <div ref={titleRef}>
           <LabeledTitle text={text} highlights={[highlights]} tag={tag} />
+        </div>
 
-          <div className={styles.content}>
-            <p className={styles.content__text}>{description}</p>
-          </div>
+        <div className={styles.content} ref={descriptionRef}>
+          <p className={styles.content__text}>{description}</p>
+        </div>
 
-          <div className={styles.list}>
-            {dataCards.map((item, index) => (
-              <CooperationCard
-                key={index}
-                title={item.title}
-                description={item.description}
-                value={item.value}
-                icon={item.icon}
-                classCard={styles[`${item.classCard + `${index + 1}`}`]}
-              />
-            ))}
-          </div>
-        </>
-      }
-    </SectionBase>
+        <div className={styles.list}>
+          {dataCards.map((item, index) => (
+            <CooperationCard
+              key={index}
+              title={item.title}
+              description={item.description}
+              value={item.value}
+              icon={item.icon}
+              classCard={styles[`${item.classCard + `${index + 1}`}`]}
+              delay={index * 0.2}
+            />
+          ))}
+        </div>
+      </SectionBase>
+    </div>
   );
 };
